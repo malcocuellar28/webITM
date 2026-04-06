@@ -1,0 +1,216 @@
+/* =========================================================
+   BREADCRUMB
+   Ruta de navegación fija y contextual del sitio.
+   ========================================================= */
+
+/* =========================================================
+   CONTENEDOR BASE
+   ========================================================= */
+
+.site-breadcrumb {
+    position: sticky;
+    top: var(--site-header-current-height, var(--layout-header-height));
+    z-index: 900;
+    padding-block: 12px 10px;
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--color-page-bg) 82%, transparent),
+            color-mix(in srgb, var(--color-page-bg) 68%, transparent)
+        );
+    backdrop-filter: blur(16px) saturate(1.06);
+    -webkit-backdrop-filter: blur(16px) saturate(1.06);
+    transition:
+        background-color var(--motion-duration-base) var(--motion-ease-standard),
+        backdrop-filter var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.site-breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    min-height: 40px;
+}
+
+.site-breadcrumb__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.site-breadcrumb__item:not(:last-child)::after {
+    content: "";
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+    border-top: 2px solid color-mix(in srgb, var(--color-brand-primary) 32%, transparent);
+    border-right: 2px solid color-mix(in srgb, var(--color-brand-primary) 32%, transparent);
+    transform: rotate(45deg);
+    opacity: 0.9;
+}
+
+/* =========================================================
+   ENLACE Y ESTADO ACTUAL
+   ========================================================= */
+
+.site-breadcrumb__link,
+.site-breadcrumb__current {
+    display: inline-flex;
+    align-items: center;
+    min-width: 0;
+    font-family: var(--font-family-ui);
+    font-size: 0.86rem;
+    font-weight: var(--font-weight-ui-text);
+    line-height: 1.2;
+}
+
+.site-breadcrumb__link {
+    min-height: 32px;
+    padding: 0 4px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    color: var(--color-type-ui-muted);
+    white-space: normal;
+    text-wrap: pretty;
+    transition:
+        color var(--motion-duration-fast) var(--motion-ease-standard),
+        opacity var(--motion-duration-fast) var(--motion-ease-standard),
+        transform var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.site-breadcrumb__link:hover,
+.site-breadcrumb__link:focus-visible {
+    color: var(--color-brand-primary);
+    opacity: 1;
+}
+
+.site-breadcrumb__current {
+    position: relative;
+    min-height: 36px;
+    padding: 0 14px 0 16px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 18%, transparent);
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface) 74%, transparent);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px) saturate(1.06);
+    -webkit-backdrop-filter: blur(12px) saturate(1.06);
+    color: var(--color-type-ui);
+    transform-origin: center;
+    overflow: hidden;
+    white-space: normal;
+    text-wrap: pretty;
+    transition:
+        color var(--motion-duration-fast) var(--motion-ease-standard),
+        border-color var(--motion-duration-fast) var(--motion-ease-standard),
+        background-color var(--motion-duration-fast) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.site-breadcrumb__current > span {
+    display: inline-block;
+    min-width: 0;
+}
+
+.site-breadcrumb__current::before {
+    content: "";
+    width: 8px;
+    height: 8px;
+    margin-right: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background-color: color-mix(in srgb, var(--color-brand-accent) 88%, var(--color-surface));
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-brand-primary) 8%, transparent);
+}
+
+/* =========================================================
+   FEEDBACK DE CAMBIO DE SECCIÓN
+   Pulso breve solo en el dot del breadcrumb actual.
+   ========================================================= */
+
+.site-breadcrumb__current.is-updating::before {
+    animation: breadcrumbDotPulse 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes breadcrumbDotPulse {
+    0% {
+        opacity: 0.92;
+        transform: scale(1);
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-brand-primary) 10%, transparent);
+    }
+
+    45% {
+        opacity: 1;
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px color-mix(in srgb, var(--color-brand-primary) 14%, transparent);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-brand-primary) 8%, transparent);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-breadcrumb__link,
+    .site-breadcrumb__current,
+    .site-breadcrumb__current > span {
+        transition: none !important;
+    }
+
+    .site-breadcrumb__current.is-updating::before {
+        animation: none !important;
+    }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .site-breadcrumb {
+        padding-block: 10px 8px;
+    }
+
+    .site-breadcrumb__list {
+        gap: 10px;
+        min-height: 36px;
+    }
+
+    .site-breadcrumb__item {
+        gap: 10px;
+        align-items: center;
+    }
+
+    .site-breadcrumb__item:not(:last-child)::after {
+        width: 7px;
+        height: 7px;
+    }
+
+    .site-breadcrumb__link {
+        min-height: 30px;
+        padding: 0 2px;
+        font-size: 0.82rem;
+    }
+
+    .site-breadcrumb__current {
+        min-height: 32px;
+        padding: 0 12px 0 14px;
+        font-size: 0.82rem;
+        align-items: center;
+    }
+
+    .site-breadcrumb__current::before {
+        width: 7px;
+        height: 7px;
+        margin-right: 8px;
+        align-self: center;
+        box-shadow: 0 0 0 5px color-mix(in srgb, var(--color-brand-primary) 8%, transparent);
+    }
+}

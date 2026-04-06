@@ -1,0 +1,161 @@
+/* =========================================================
+   TEMAS GLOBALES
+   Solo sobrescribe tokens del sistema.
+   No incluye estilos de componentes.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Tema claro
+   El sistema base ya nace en :root dentro de tokens.css
+   --------------------------------------------------------- */
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+/* ---------------------------------------------------------
+   Tema oscuro
+   Sobrescribe únicamente variables globales
+   --------------------------------------------------------- */
+html[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* =====================================================
+       COLORES DE MARCA
+       ===================================================== */
+    --color-brand-primary: #7F9EF1;
+    --color-brand-primary-dark: #5D7DD6;
+    --color-brand-primary-light: #AFC3FF;
+
+    --color-brand-accent: #F2E41D;
+    --color-brand-accent-dark: #D8CB18;
+
+    --color-feedback-success: #72C29A;
+    --color-feedback-danger: #E26A6A;
+
+    /* =====================================================
+       SUPERFICIES Y FONDOS
+       ===================================================== */
+    --color-page-bg: #0F1726;
+    --color-page-bg-alt: #162338;
+
+    --color-surface: #19263A;
+    --color-surface-soft: #22324A;
+    --color-surface-soft-alt: #26364F;
+
+    --color-white: #FFFFFF;
+
+    /* =====================================================
+       TEXTO
+       ===================================================== */
+    --color-text-primary: #EEF3FB;
+    --color-text-secondary: #C2CDDC;
+
+    /* =====================================================
+       BORDES Y CAPAS
+       ===================================================== */
+    --color-border-subtle: rgba(127, 158, 241, 0.14);
+    --color-border-strong: rgba(127, 158, 241, 0.20);
+
+    --color-overlay-soft: rgba(127, 158, 241, 0.08);
+    --color-overlay-medium: rgba(127, 158, 241, 0.14);
+    --color-overlay-strong: rgba(127, 158, 241, 0.22);
+    --color-overlay-solid: rgba(17, 29, 48, 0.88);
+
+    --color-focus-ring: rgba(127, 158, 241, 0.24);
+
+    --color-type-heading: var(--color-text-primary);
+    --color-type-body: var(--color-text-primary);
+    --color-type-body-muted: var(--color-text-secondary);
+    --color-type-ui: var(--color-text-primary);
+    --color-type-ui-muted: var(--color-text-secondary);
+    --color-type-button: #203768;
+    --color-type-hero-title: var(--color-text-primary);
+    --color-type-hero-kicker: var(--color-brand-primary-light);
+    --color-type-hero-tagline: #9ad6b1;
+    --color-type-news-title: rgba(255, 247, 239, 0.96);
+    --color-type-news-body: rgba(222, 228, 232, 0.84);
+    --color-type-news-body-muted: rgba(222, 228, 232, 0.76);
+    --color-type-news-meta: #d2b27b;
+    --color-type-number: var(--color-brand-primary-light);
+
+    /* =====================================================
+       DEGRADADOS GLOBALES
+       ===================================================== */
+    --gradient-section-divider: linear-gradient(
+        90deg,
+        rgba(127, 158, 241, 0),
+        rgba(127, 158, 241, 0.18),
+        rgba(242, 228, 29, 0.18),
+        rgba(127, 158, 241, 0.18),
+        rgba(127, 158, 241, 0)
+    );
+
+    --gradient-hero: linear-gradient(
+        135deg,
+        #1B3059,
+        #12203A
+    );
+
+    --gradient-footer: linear-gradient(
+        135deg,
+        #162746,
+        #0F1A2D
+    );
+
+    /* =====================================================
+       SOMBRAS
+       ===================================================== */
+    --shadow-sm: 0 10px 24px rgba(0, 0, 0, 0.18);
+    --shadow-md: 0 16px 32px rgba(0, 0, 0, 0.22);
+    --shadow-lg: 0 22px 42px rgba(0, 0, 0, 0.28);
+    --shadow-header: 0 12px 28px rgba(0, 0, 0, 0.22);
+
+    /* =====================================================
+       LOADER / SPINNER
+       ===================================================== */
+    --loader-backdrop: rgba(15, 23, 38, 0.92);
+
+    /* =====================================================
+       NAV MÓVIL / SUPERFICIE VIDRIOSA
+       ===================================================== */
+    /*--nav-mobile-panel-bg: rgba(17, 29, 48, 0.72);*/
+    --nav-mobile-panel-bg: rgba(17, 29, 48, 0.95);
+    --nav-mobile-panel-border: rgba(255, 255, 255, 0.08);
+    --nav-mobile-panel-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+    --nav-mobile-panel-blur: 22px;
+    --nav-mobile-panel-saturate: 1.18;
+
+/* =====================================================
+   HERO
+   Tokens del hero en tema oscuro.
+   ===================================================== */
+--hero-background-base: var(--color-page-bg);
+--hero-background-alt: var(--color-page-bg-alt);
+
+--hero-glow-primary: var(--color-brand-primary-light);
+--hero-glow-accent: var(--color-brand-accent);
+
+--hero-grid-color: var(--color-brand-primary-light);
+
+--gradient-hero-ambient:
+    radial-gradient(
+        circle at 88% 12%,
+        color-mix(in srgb, var(--hero-glow-primary) 22%, transparent) 0%,
+        transparent 34%
+    ),
+    radial-gradient(
+        circle at 12% 88%,
+        color-mix(in srgb, var(--hero-glow-accent) 12%, transparent) 0%,
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        var(--hero-background-alt) 0%,
+        var(--hero-background-alt) 42%,
+        var(--hero-background-base) 100%
+    );
+
+--gradient-hero-sheen: none;
+}

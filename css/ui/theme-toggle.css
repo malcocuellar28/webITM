@@ -1,0 +1,128 @@
+/* =========================================================
+   THEME TOGGLE
+   Botón de cambio de tema con iconografía y microinteracciones.
+   ========================================================= */
+
+/* Superficie compacta con feedback visual rápido, sin alterar el layout. */
+.theme-toggle {
+    position: relative;
+    z-index: 2;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--color-border-subtle);
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    color: var(--color-type-ui);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(14px) saturate(1.08);
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+    overflow: hidden;
+    transition:
+        background-color var(--motion-duration-fast) var(--motion-ease-standard),
+        border-color var(--motion-duration-fast) var(--motion-ease-standard),
+        color var(--motion-duration-fast) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-fast) var(--motion-ease-standard),
+        transform var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.theme-toggle:hover {
+    background-color: var(--color-overlay-soft);
+    border-color: var(--color-border-strong);
+    color: var(--color-brand-primary);
+    box-shadow: var(--shadow-md);
+}
+
+.theme-toggle:active {
+    transform: translateY(1px);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 3px;
+}
+
+.theme-toggle__icon {
+    position: absolute;
+    inset: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    transition:
+        opacity var(--motion-duration-base) var(--motion-ease-standard),
+        transform var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+/* Intercambio visual de iconos entre tema claro y oscuro. */
+.theme-toggle__icon svg {
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.theme-toggle__icon--sun {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle__icon--moon {
+    opacity: 0;
+    transform: scale(0.7) rotate(-24deg);
+}
+
+html[data-theme="dark"] .theme-toggle__icon--sun {
+    opacity: 0;
+    transform: scale(0.7) rotate(24deg);
+}
+
+html[data-theme="dark"] .theme-toggle__icon--moon {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+
+html[data-theme="dark"] .theme-toggle {
+    background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    border-color: var(--color-border-subtle);
+    color: var(--color-type-ui);
+}
+
+html[data-theme="dark"] .theme-toggle:hover {
+    background-color: var(--color-overlay-soft);
+    border-color: var(--color-border-strong);
+    color: var(--color-brand-primary-light);
+}
+
+@media (max-width: 640px) {
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .theme-toggle__icon svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .theme-toggle,
+    .theme-toggle__icon {
+        transition: none !important;
+    }
+
+    .theme-toggle:active {
+        transform: none !important;
+    }
+
+    .theme-toggle__icon--sun,
+    .theme-toggle__icon--moon,
+    html[data-theme="dark"] .theme-toggle__icon--sun,
+    html[data-theme="dark"] .theme-toggle__icon--moon {
+        transform: none !important;
+    }
+}

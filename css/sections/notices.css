@@ -1,0 +1,272 @@
+/* =========================================================
+   NOTICES
+   Sección de avisos importantes. Presenta una lista breve de
+   avisos institucionales con jerarquía clara, hover sutil y
+   soporte para reduced motion.
+   ========================================================= */
+
+.notices-section {
+    --notices-title-max-width: 17ch;
+    --notice-date-size: 0.88rem;
+    --notice-text-size: 0.96rem;
+    --notice-text-line-height: 1.56;
+
+    position: relative;
+    padding-block: var(--space-3xl);
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, #0f2f46 8%, var(--color-page-bg-alt)),
+            color-mix(in srgb, #0f2f46 8%, var(--color-page-bg))
+        );
+}
+
+.notices-section__panel {
+    position: relative;
+    display: grid;
+    gap: clamp(24px, 3vw, 34px);
+    padding: clamp(22px, 3vw, 34px);
+    border: 1px solid color-mix(in srgb, #2a5a78 16%, var(--color-border-subtle));
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+        color-mix(in srgb, #f5f9fc 88%, var(--color-surface));
+    box-shadow: 0 22px 48px rgba(16, 36, 56, 0.10);
+    backdrop-filter: blur(18px) saturate(1.05);
+    -webkit-backdrop-filter: blur(18px) saturate(1.05);
+    overflow: hidden;
+}
+
+.notices-section__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(42, 90, 120, 0.10), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(93, 126, 148, 0.08), transparent 28%);
+    pointer-events: none;
+}
+
+.notices-section__intro {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 28px);
+}
+
+.notices-section__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.notices-section__brand-logo {
+    width: min(148px, 18vw);
+    min-width: 92px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.notices-section__copy {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.notices-section__kicker {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-section-kicker);
+    font-weight: var(--font-weight-section-kicker);
+    letter-spacing: var(--letter-spacing-section-kicker);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.notices-section__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-section-title);
+    line-height: var(--line-height-section-title);
+    letter-spacing: var(--letter-spacing-section-title);
+    color: var(--color-type-heading);
+    max-width: var(--notices-title-max-width);
+    text-wrap: balance;
+}
+
+.notices-section__description {
+    max-width: 68ch;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-section-body);
+    line-height: var(--line-height-section-body);
+    color: var(--color-type-body-muted);
+}
+
+.notices-section__list {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 14px;
+}
+
+.notice-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto minmax(0, 1fr);
+    align-items: center;
+    gap: 14px;
+    min-height: 76px;
+    padding: 18px 18px;
+    border: 1px solid color-mix(in srgb, #7f9bb0 18%, var(--color-border-subtle));
+    border-radius: 22px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
+        color-mix(in srgb, #ffffff 92%, var(--color-surface));
+    box-shadow: 0 10px 24px rgba(19, 39, 58, 0.06);
+    overflow: hidden;
+}
+
+.notice-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(42, 90, 120, 0.14),
+            rgba(42, 90, 120, 0.04) 42%,
+            transparent 72%
+        );
+    opacity: 0;
+    transition: opacity var(--motion-duration-fast) var(--motion-ease-standard);
+    pointer-events: none;
+}
+
+.notice-card:hover::before,
+.notice-card:focus-within::before {
+    opacity: 1;
+}
+
+.notice-card__dot {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2a5a78, #6e8ba0);
+    box-shadow: 0 0 0 6px rgba(42, 90, 120, 0.10);
+}
+
+.notice-card__date {
+    font-family: var(--font-family-ui);
+    font-size: var(--notice-date-size);
+    font-weight: var(--font-weight-ui-label);
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: #2a5a78;
+    white-space: nowrap;
+}
+
+.notice-card__text {
+    font-family: var(--font-family-body);
+    font-size: var(--notice-text-size);
+    line-height: var(--notice-text-line-height);
+    color: var(--color-type-body);
+}
+
+html[data-theme="dark"] .notices-section {
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, #0f2f46 12%, var(--color-page-bg-alt)),
+            color-mix(in srgb, #0f2f46 12%, var(--color-page-bg))
+        );
+}
+
+html[data-theme="dark"] .notices-section__panel {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 22%),
+        color-mix(in srgb, #10202d 86%, var(--color-surface));
+    border-color: color-mix(in srgb, #406883 22%, var(--color-border-subtle));
+}
+
+html[data-theme="dark"] .notice-card {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        color-mix(in srgb, #152838 90%, var(--color-surface));
+    border-color: color-mix(in srgb, #5a7a91 20%, var(--color-border-subtle));
+}
+
+html[data-theme="dark"] .notice-card__date {
+    color: #86aeca;
+}
+
+@media (max-width: 768px) {
+    .notices-section__intro {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .notices-section__brand-logo {
+        width: min(132px, 30vw);
+    }
+
+    .notices-section__copy {
+        justify-items: center;
+    }
+
+    .notices-section__description {
+        max-width: 38ch;
+    }
+
+    .notices-section__title {
+        max-width: 15ch;
+    }
+}
+
+@media (max-width: 640px) {
+    .notices-section {
+        padding-block: var(--space-2xl);
+    }
+
+    .notices-section__panel {
+        padding: 18px 16px;
+        border-radius: 26px;
+    }
+
+    .notices-section__title {
+        font-size: clamp(1.7rem, 6vw, 2.25rem);
+    }
+
+    .notices-section__description {
+        max-width: 100%;
+        font-size: 0.96rem;
+    }
+
+    .notice-card {
+        grid-template-columns: auto 1fr;
+        align-items: start;
+        gap: 10px 12px;
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .notice-card__date {
+        grid-column: 2 / 3;
+        font-size: 0.82rem;
+    }
+
+    .notice-card__text {
+        grid-column: 1 / -1;
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .notice-card::before {
+        transition: none !important;
+    }
+}

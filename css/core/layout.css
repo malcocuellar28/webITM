@@ -1,0 +1,198 @@
+/* =========================================================
+   LAYOUT GLOBAL
+   Estructura reutilizable del sitio.
+   No incluye estilos de componentes concretos.
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   Contenedor principal
+   --------------------------------------------------------- */
+.container {
+    width: min(100% - (var(--layout-container-padding-inline) * 2), var(--layout-container-max-width));
+    margin-inline: auto;
+}
+
+/* ---------------------------------------------------------
+   Flujo vertical principal
+   --------------------------------------------------------- */
+.site-main {
+    display: block;
+}
+
+.site-section {
+    position: relative;
+    padding-block: var(--space-3xl);
+}
+
+.site-section--compact {
+    padding-block: var(--space-2xl);
+}
+
+.site-section--spacious {
+    padding-block: calc(var(--space-3xl) + var(--space-xl));
+}
+
+/* ---------------------------------------------------------
+   Separador visual entre secciones
+   Se aplicará solo donde convenga, no automáticamente a todo.
+   --------------------------------------------------------- */
+.site-section--with-divider::before {
+    content: "";
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-start: 50%;
+    transform: translateX(-50%);
+    width: min(980px, calc(100% - 52px));
+    height: 1px;
+    background: var(--gradient-section-divider);
+    opacity: 0.8;
+    pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   Wrappers internos reutilizables
+   --------------------------------------------------------- */
+.section-shell {
+    position: relative;
+    z-index: 1;
+}
+
+.section-stack {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.section-stack--sm {
+    gap: var(--space-lg);
+}
+
+.section-stack--lg {
+    gap: var(--space-2xl);
+}
+
+/* ---------------------------------------------------------
+   Encabezado base de sección
+   --------------------------------------------------------- */
+.section-header {
+    display: grid;
+    gap: var(--space-sm);
+    margin-block-end: var(--space-2xl);
+}
+
+.section-kicker {
+    font-family: var(--font-family-ui);
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.section-title {
+    font-family: var(--font-family-heading);
+    font-size: clamp(1.75rem, 1.3rem + 1.4vw, 2.5rem);
+    line-height: 1.1;
+    color: var(--color-text-primary);
+}
+
+.section-description {
+    max-width: 68ch;
+    color: var(--color-text-secondary);
+}
+
+/* ---------------------------------------------------------
+   Rejillas base reutilizables
+   --------------------------------------------------------- */
+.grid {
+    display: grid;
+    gap: var(--space-xl);
+}
+
+.grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* ---------------------------------------------------------
+   Distribuciones flex reutilizables
+   --------------------------------------------------------- */
+.cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    align-items: center;
+}
+
+.cluster--between {
+    justify-content: space-between;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+}
+
+.stack--sm {
+    gap: var(--space-md);
+}
+
+.stack--lg {
+    gap: var(--space-xl);
+}
+
+/* ---------------------------------------------------------
+   Responsivo
+   --------------------------------------------------------- */
+@media (max-width: 1024px) {
+    .site-section {
+        padding-block: var(--space-2xl);
+    }
+
+    .grid--4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid--3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: min(100% - (var(--layout-container-padding-inline) * 1.6), var(--layout-container-max-width));
+    }
+
+    .site-section,
+    .site-section--compact,
+    .site-section--spacious {
+        padding-block: var(--space-2xl);
+    }
+
+    .section-header {
+        margin-block-end: var(--space-xl);
+    }
+
+    .grid--2,
+    .grid--3,
+    .grid--4 {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-title {
+        font-size: clamp(1.5rem, 1.15rem + 1.2vw, 2rem);
+    }
+
+    .section-description {
+        max-width: 100%;
+    }
+}

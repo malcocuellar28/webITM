@@ -1,0 +1,246 @@
+:root {
+    /* =========================================================
+       COLORES DE MARCA
+       ========================================================= */
+    --color-brand-primary: #3663BF;
+    --color-brand-primary-dark: #274A97;
+    --color-brand-primary-light: #5C84D8;
+
+    --color-brand-accent: #F2E41D;
+    --color-brand-accent-dark: #D8CB18;
+
+    --color-feedback-success: #56A681;
+    --color-feedback-danger: #D64848;
+
+    /* =========================================================
+       SUPERFICIES Y FONDOS
+       ========================================================= */
+    --color-page-bg: #F4F7FB;
+    --color-page-bg-alt: #E8EEF7;
+
+    --color-surface: #FFFFFF;
+    --color-surface-soft: #F8FBFF;
+    --color-surface-soft-alt: #EEF3FB;
+
+    --color-white: #FFFFFF;
+
+    /* =========================================================
+       TEXTO
+       ========================================================= */
+    --color-text-primary: #162338;
+    --color-text-secondary: #5D6B80;
+
+    /* =========================================================
+       BORDES Y CAPAS
+       ========================================================= */
+    --color-border-subtle: rgba(54, 99, 191, 0.12);
+    --color-border-strong: rgba(54, 99, 191, 0.18);
+
+    --color-overlay-soft: rgba(54, 99, 191, 0.08);
+    --color-overlay-medium: rgba(54, 99, 191, 0.16);
+    --color-overlay-strong: rgba(54, 99, 191, 0.24);
+    --color-overlay-solid: rgba(54, 99, 191, 0.86);
+
+    --color-focus-ring: rgba(54, 99, 191, 0.18);
+
+    /* =========================================================
+       DEGRADADOS GLOBALES
+       ========================================================= */
+    --gradient-section-divider: linear-gradient(
+        90deg,
+        rgba(54, 99, 191, 0),
+        rgba(54, 99, 191, 0.18),
+        rgba(242, 228, 29, 0.22),
+        rgba(54, 99, 191, 0.18),
+        rgba(54, 99, 191, 0)
+    );
+
+    --gradient-hero: linear-gradient(
+        135deg,
+        var(--color-brand-primary),
+        var(--color-brand-primary-dark)
+    );
+
+    --gradient-footer: linear-gradient(
+        135deg,
+        #2C4F9F,
+        #1E356B
+    );
+
+    /* =========================================================
+       TIPOGRAFÍAS DEL SISTEMA
+       ========================================================= */
+    --font-family-body: "Body Text", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-family-heading: "Section Heading", "Body Text", sans-serif;
+    --font-family-hero-title: "Hero Title", "Section Heading", serif;
+    --font-family-ui: "UI Text", "Body Text", sans-serif;
+    --font-family-numeric: "Numeric Display", "UI Text", sans-serif;
+    --font-family-news-body: "News Body", "Body Text", sans-serif;
+    --font-family-news-title: "News Title", "Section Heading", serif;
+    --font-family-button: "Button Text", "UI Text", "Body Text", sans-serif;
+
+    --font-size-body: 1rem;
+    --line-height-body: 1.6;
+
+    --font-size-section-kicker: 0.82rem;
+    --font-weight-section-kicker: 800;
+    --letter-spacing-section-kicker: 0.1em;
+
+    --font-size-section-title: clamp(2rem, 1.55rem + 1.5vw, 3rem);
+    --line-height-section-title: 1.06;
+    --letter-spacing-section-title: -0.02em;
+
+    --font-size-section-body: 1rem;
+    --line-height-section-body: 1.65;
+
+    --font-size-ui-text: 0.96rem;
+    --font-weight-ui-text: 700;
+    --line-height-ui-text: 1.45;
+
+    --font-size-ui-label: 0.8rem;
+    --font-weight-ui-label: 800;
+    --letter-spacing-ui-label: 0.08em;
+
+    --font-size-button: 0.96rem;
+    --font-weight-button: 800;
+    --letter-spacing-button: -0.01em;
+
+    --font-size-news-page-title: clamp(2.4rem, 1.8rem + 2vw, 4.2rem);
+    --line-height-news-page-title: 0.98;
+    --letter-spacing-news-page-title: -0.03em;
+
+    --font-size-news-title: clamp(2rem, 1.55rem + 1.2vw, 3rem);
+    --line-height-news-title: 1.02;
+    --letter-spacing-news-title: -0.03em;
+
+    --font-size-news-card-title: clamp(1.45rem, 1.18rem + 0.45vw, 1.85rem);
+    --line-height-news-card-title: 1.08;
+    --letter-spacing-news-card-title: -0.025em;
+
+    --font-size-news-body: 1rem;
+    --line-height-news-body: 1.78;
+    --font-size-news-body-sm: 0.94rem;
+    --line-height-news-body-sm: 1.72;
+
+    --font-size-number: clamp(2rem, 1.6rem + 1vw, 2.8rem);
+    --font-size-number-lg: clamp(2.4rem, 2rem + 1.4vw, 4rem);
+    --line-height-number: 0.95;
+    --letter-spacing-number: -0.04em;
+
+    --color-type-heading: var(--color-text-primary);
+    --color-type-body: var(--color-text-primary);
+    --color-type-body-muted: var(--color-text-secondary);
+    --color-type-ui: var(--color-text-primary);
+    --color-type-ui-muted: var(--color-text-secondary);
+    --color-type-button: var(--color-brand-primary-dark);
+    --color-type-hero-title: var(--color-text-primary);
+    --color-type-hero-kicker: var(--color-brand-primary);
+    --color-type-hero-tagline: var(--color-feedback-success);
+    --color-type-news-title: #2a1e16;
+    --color-type-news-body: #4f4338;
+    --color-type-news-body-muted: #52463c;
+    --color-type-news-meta: #8a6a46;
+    --color-type-number: var(--color-brand-primary);
+
+    /* =========================================================
+       MEDIDAS GLOBALES
+       ========================================================= */
+    --layout-header-height: 70px;
+    --layout-container-max-width: 1200px;
+    --layout-container-padding-inline: 20px;
+
+    /* =========================================================
+       RADIOS
+       ========================================================= */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-pill: 999px;
+
+    /* =========================================================
+       SOMBRAS
+       ========================================================= */
+    --shadow-sm: 0 8px 24px rgba(24, 40, 77, 0.08);
+    --shadow-md: 0 12px 30px rgba(24, 40, 77, 0.10);
+    --shadow-lg: 0 18px 40px rgba(24, 40, 77, 0.16);
+    --shadow-header: 0 8px 24px rgba(24, 40, 77, 0.08);
+
+    /* =========================================================
+       ESPACIADO
+       ========================================================= */
+    --space-2xs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+
+    /* =========================================================
+       MOVIMIENTO
+       ========================================================= */
+    --motion-duration-fast: 0.22s;
+    --motion-duration-base: 0.36s;
+    --motion-duration-slow: 0.55s;
+
+    --motion-ease-standard: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-ease-soft: ease;
+
+    --motion-distance-sm: 3px;
+    --motion-distance-md: 24px;
+    --motion-scale-hover: 1.05;
+    --motion-stagger-step: 90ms;
+
+    /* =========================================================
+       LOADER / SPINNER
+       ========================================================= */
+    --loader-backdrop: rgba(244, 247, 251, 0.92);
+    --loader-spinner-size: 52px;
+
+    /* =========================================================
+       NAV MÓVIL / SUPERFICIE VIDRIOSA
+       ========================================================= */
+    /*--nav-mobile-panel-bg: rgba(255, 255, 255, 0.72);*/
+    --nav-mobile-panel-bg: rgba(255, 255, 255, 0.95);
+    --nav-mobile-panel-border: rgba(255, 255, 255, 0.42);
+    --nav-mobile-panel-shadow:
+        0 18px 40px rgba(24, 40, 77, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    --nav-mobile-panel-blur: 22px;
+    --nav-mobile-panel-saturate: 1.18;
+
+/* =========================================================
+   HERO
+   Tokens semánticos del hero alimentados por la paleta institucional.
+   ========================================================= */
+--hero-background-base: var(--color-page-bg);
+--hero-background-alt: var(--color-page-bg-alt);
+
+--hero-glow-primary: var(--color-brand-primary-light);
+--hero-glow-accent: var(--color-brand-accent);
+
+--hero-grid-color: var(--color-brand-primary-light);
+
+/* Gradiente ambiental del hero */
+--gradient-hero-ambient:
+    radial-gradient(
+        circle at 88% 12%,
+        color-mix(in srgb, var(--hero-glow-primary) 24%, transparent) 0%,
+        transparent 34%
+    ),
+    radial-gradient(
+        circle at 12% 88%,
+        color-mix(in srgb, var(--hero-glow-accent) 18%, transparent) 0%,
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        var(--hero-background-base) 0%,
+        var(--hero-background-base) 48%,
+        var(--hero-background-alt) 100%
+    );
+
+--gradient-hero-sheen: none;
+
+}

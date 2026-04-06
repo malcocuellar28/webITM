@@ -1,0 +1,326 @@
+/* =========================================================
+   EVENTS
+   Sección de próximos eventos. Presenta una lista de eventos
+   institucionales con fecha destacada, contenido resumido y
+   un hover sutil, manteniendo soporte para reduced motion.
+   ========================================================= */
+
+.events-section {
+    --events-title-max-width: 17ch;
+    --event-day-size: 2rem;
+    --event-month-size: 0.78rem;
+    --event-date-size: 0.88rem;
+    --event-title-size: 1.12rem;
+    --event-text-size: 0.95rem;
+    --event-text-line-height: 1.58;
+
+    position: relative;
+    padding-block: var(--space-3xl);
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, #0f2f46 8%, var(--color-page-bg-alt)),
+            color-mix(in srgb, #0f2f46 8%, var(--color-page-bg))
+        );
+}
+
+.events-section__panel {
+    position: relative;
+    display: grid;
+    gap: clamp(24px, 3vw, 34px);
+    padding: clamp(22px, 3vw, 34px);
+    border: 1px solid color-mix(in srgb, #2a5a78 16%, var(--color-border-subtle));
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 22%),
+        color-mix(in srgb, #f5f9fc 88%, var(--color-surface));
+    box-shadow: 0 22px 48px rgba(16, 36, 56, 0.10);
+    backdrop-filter: blur(18px) saturate(1.05);
+    -webkit-backdrop-filter: blur(18px) saturate(1.05);
+    overflow: hidden;
+}
+
+.events-section__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, rgba(42, 90, 120, 0.10), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(93, 126, 148, 0.08), transparent 28%);
+    pointer-events: none;
+}
+
+.events-section__intro {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 28px);
+}
+
+.events-section__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.events-section__brand-logo {
+    width: min(148px, 18vw);
+    min-width: 92px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.events-section__copy {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.events-section__kicker {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-section-kicker);
+    font-weight: var(--font-weight-section-kicker);
+    letter-spacing: var(--letter-spacing-section-kicker);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.events-section__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-section-title);
+    line-height: var(--line-height-section-title);
+    letter-spacing: var(--letter-spacing-section-title);
+    color: var(--color-type-heading);
+    max-width: var(--events-title-max-width);
+    text-wrap: balance;
+}
+
+.events-section__description {
+    max-width: 68ch;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-section-body);
+    line-height: var(--line-height-section-body);
+    color: var(--color-type-body-muted);
+}
+
+.events-section__list {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 16px;
+}
+
+.event-card {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+    min-height: 112px;
+    padding: 18px 18px;
+    border: 1px solid color-mix(in srgb, #8aa2b4 18%, var(--color-border-subtle));
+    border-radius: 24px;
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0)),
+        color-mix(in srgb, #ffffff 94%, var(--color-surface));
+    box-shadow: 0 10px 24px rgba(19, 39, 58, 0.06);
+    overflow: hidden;
+}
+
+.event-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(42, 90, 120, 0.12),
+            rgba(42, 90, 120, 0.04) 42%,
+            transparent 72%
+        );
+    opacity: 0;
+    transition: opacity var(--motion-duration-fast) var(--motion-ease-standard);
+    pointer-events: none;
+}
+
+.event-card:hover::before,
+.event-card:focus-within::before {
+    opacity: 1;
+}
+
+.event-card__date-box {
+    width: 82px;
+    min-height: 82px;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    gap: 4px;
+    padding: 10px 8px;
+    border-radius: 22px;
+    background:
+        linear-gradient(180deg, #17364d, #234c69);
+    box-shadow:
+        0 14px 24px rgba(16, 33, 49, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    color: var(--color-white);
+    flex-shrink: 0;
+}
+
+.event-card__day {
+    font-family: var(--font-family-numeric);
+    font-size: var(--event-day-size);
+    font-weight: 800;
+    line-height: var(--line-height-number);
+    letter-spacing: var(--letter-spacing-number);
+}
+
+.event-card__month {
+    font-family: var(--font-family-ui);
+    font-size: var(--event-month-size);
+    font-weight: var(--font-weight-ui-label);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+}
+
+.event-card__content {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+}
+
+.event-card__date {
+    font-family: var(--font-family-ui);
+    font-size: var(--event-date-size);
+    font-weight: var(--font-weight-ui-label);
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: #2a5a78;
+}
+
+.event-card__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--event-title-size);
+    line-height: 1.16;
+    letter-spacing: -0.01em;
+    color: var(--color-type-heading);
+}
+
+.event-card__text {
+    font-family: var(--font-family-body);
+    font-size: var(--event-text-size);
+    line-height: var(--event-text-line-height);
+    color: var(--color-type-body-muted);
+}
+
+html[data-theme="dark"] .events-section {
+    background:
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, #0f2f46 12%, var(--color-page-bg-alt)),
+            color-mix(in srgb, #0f2f46 12%, var(--color-page-bg))
+        );
+}
+
+html[data-theme="dark"] .events-section__panel {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 22%),
+        color-mix(in srgb, #10202d 86%, var(--color-surface));
+    border-color: color-mix(in srgb, #406883 22%, var(--color-border-subtle));
+}
+
+html[data-theme="dark"] .event-card {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0)),
+        color-mix(in srgb, #152838 90%, var(--color-surface));
+    border-color: color-mix(in srgb, #5a7a91 20%, var(--color-border-subtle));
+}
+
+html[data-theme="dark"] .event-card__date {
+    color: #86aeca;
+}
+
+@media (max-width: 768px) {
+    .events-section__intro {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .events-section__brand-logo {
+        width: min(132px, 30vw);
+    }
+
+    .events-section__copy {
+        justify-items: center;
+    }
+
+    .events-section__description {
+        max-width: 38ch;
+    }
+
+    .events-section__title {
+        max-width: 15ch;
+    }
+}
+
+@media (max-width: 640px) {
+    .events-section {
+        padding-block: var(--space-2xl);
+    }
+
+    .events-section__panel {
+        padding: 18px 16px;
+        border-radius: 26px;
+    }
+
+    .events-section__title {
+        font-size: clamp(1.7rem, 6vw, 2.25rem);
+    }
+
+    .events-section__description {
+        max-width: 100%;
+        font-size: 0.96rem;
+    }
+
+    .event-card {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 14px;
+        padding: 16px 14px;
+        border-radius: 18px;
+    }
+
+    .event-card__date-box {
+        width: 76px;
+        min-height: 76px;
+        border-radius: 20px;
+    }
+
+    .event-card__day {
+        font-size: 1.8rem;
+    }
+
+    .event-card__date {
+        font-size: 0.82rem;
+    }
+
+    .event-card__title {
+        font-size: 1rem;
+    }
+
+    .event-card__text {
+        font-size: 0.9rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .event-card::before {
+        transition: none !important;
+    }
+}

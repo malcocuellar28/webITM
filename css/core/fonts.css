@@ -1,0 +1,69 @@
+/* =========================================================
+   FUENTES DEL SISTEMA
+   Solo registra familias tipográficas reutilizables.
+   Los usos semánticos viven en tokens.css
+   ========================================================= */
+
+@font-face {
+    font-family: "Body Text";
+    src: url("../../fonts/NotoSans-Regular.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Section Heading";
+    src: url("../../fonts/MerriweatherSans-Titles.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Hero Title";
+    src: url("../../fonts/Fraunces-Hero.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "UI Text";
+    src: url("../../fonts/PlusJakartaSans-UI.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Numeric Display";
+    src: url("../../fonts/SpaceGrotesk-Countdown.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "News Body";
+    src: url("../../fonts/Inter-News.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "News Title";
+    src: url("../../fonts/PlayfairDisplay-News.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Button Text";
+    src: url("../../fonts/Manrope-Button.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+}

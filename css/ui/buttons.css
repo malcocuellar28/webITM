@@ -1,0 +1,138 @@
+/* =========================================================
+   BUTTONS
+   Botones base y variantes principales del sitio.
+   ========================================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 0 16px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-family: var(--font-family-button);
+    font-size: var(--font-size-button);
+    font-weight: var(--font-weight-button);
+    line-height: 1;
+    letter-spacing: var(--letter-spacing-button);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    transition:
+        background-color var(--motion-duration-fast) var(--motion-ease-standard),
+        color var(--motion-duration-fast) var(--motion-ease-standard),
+        border-color var(--motion-duration-fast) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-fast) var(--motion-ease-standard),
+        filter var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn:active {
+    transform: none;
+}
+
+.btn:focus-visible {
+    outline: 2px solid var(--color-brand-primary);
+    outline-offset: 3px;
+}
+
+/* =========================================================
+   VARIANTE PRINCIPAL
+   Amarillo con tipografía azul en ambos temas.
+   ========================================================= */
+
+.btn-action {
+    border-color: color-mix(in srgb, var(--color-brand-accent-dark) 42%, transparent);
+    background: linear-gradient(
+        180deg,
+        color-mix(in srgb, var(--color-brand-accent) 92%, white),
+        var(--color-brand-accent)
+    );
+    color: var(--color-type-button);
+    box-shadow:
+        0 12px 24px rgba(216, 203, 24, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+.btn-action:hover {
+    color: var(--color-type-button);
+    border-color: color-mix(in srgb, var(--color-brand-accent-dark) 58%, transparent);
+    box-shadow:
+        0 16px 28px rgba(216, 203, 24, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.38);
+    filter: brightness(1.02) saturate(1.02);
+}
+
+.btn-action:focus-visible {
+    outline-color: var(--color-brand-primary);
+}
+
+/* =========================================================
+   VARIANTE VIDRIOSA / SECUNDARIA
+   Mismo lenguaje visual del toggle, con texto azul fijo.
+   ========================================================= */
+
+.btn-glass {
+    border-color: var(--color-border-subtle);
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    color: var(--color-type-button);
+    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(14px) saturate(1.08);
+    -webkit-backdrop-filter: blur(14px) saturate(1.08);
+}
+
+.btn-glass:hover {
+    background-color: var(--color-overlay-soft);
+    border-color: var(--color-border-strong);
+    color: var(--color-type-button);
+    box-shadow: var(--shadow-md);
+    filter: saturate(1.02);
+}
+
+html[data-theme="dark"] .btn-glass {
+    background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    color: var(--color-type-button);
+    border-color: var(--color-border-subtle);
+    box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="dark"] .btn-glass:hover {
+    background-color: var(--color-overlay-soft);
+    border-color: var(--color-border-strong);
+    color: var(--color-brand-primary-dark);
+    box-shadow: var(--shadow-md);
+    filter: saturate(1.03);
+}
+
+/* =========================================================
+   RESPONSIVO
+   ========================================================= */
+
+@media (max-width: 640px) {
+    .btn {
+        min-height: 44px;
+        padding: 0 15px;
+        border-radius: 9px;
+        font-size: 0.94rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .btn {
+        transition: none !important;
+    }
+
+    .btn-action:hover,
+    .btn-glass:hover,
+    html[data-theme="dark"] .btn-glass:hover {
+        filter: none !important;
+    }
+}

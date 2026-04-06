@@ -1,0 +1,333 @@
+/* =========================================================
+   EDUCATION LEVELS
+   Sección de niveles educativos. Presenta cards informativas
+   con imagen, descripción y chips, manteniendo la media fija
+   y un hover basado en sombra sin desplazamiento vertical.
+   ========================================================= */
+
+.education-levels-section {
+    --education-levels-title-max-width: 17ch;
+    --education-level-card-title-size: 1.4rem;
+    --education-level-card-description-size: 0.96rem;
+    --education-level-card-description-line-height: 1.62;
+    --education-level-chip-size: 0.9rem;
+    --education-level-card-media-height: 220px;
+
+    position: relative;
+    padding-block: var(--space-3xl);
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-brand-primary) 10%, transparent), transparent 30%),
+        radial-gradient(circle at bottom right, color-mix(in srgb, var(--color-feedback-success) 12%, transparent), transparent 34%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--color-surface-soft) 88%, var(--color-page-bg-alt)),
+            color-mix(in srgb, var(--color-page-bg) 92%, var(--color-surface-soft-alt))
+        );
+}
+
+.education-levels-section__panel {
+    position: relative;
+    display: grid;
+    gap: clamp(24px, 3vw, 36px);
+    padding: clamp(22px, 3vw, 34px);
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 12%, var(--color-border-subtle));
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 22%),
+        color-mix(in srgb, var(--color-surface) 82%, transparent);
+    box-shadow: 0 22px 48px rgba(24, 40, 77, 0.10);
+    backdrop-filter: blur(18px) saturate(1.06);
+    -webkit-backdrop-filter: blur(18px) saturate(1.06);
+    overflow: hidden;
+}
+
+.education-levels-section__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-brand-primary) 10%, transparent), transparent 34%),
+        radial-gradient(circle at bottom right, color-mix(in srgb, var(--color-feedback-success) 10%, transparent), transparent 30%);
+    pointer-events: none;
+}
+
+.education-levels-section__intro {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 28px);
+}
+
+.education-levels-section__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.education-levels-section__brand-logo {
+    width: min(148px, 18vw);
+    min-width: 92px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.education-levels-section__copy {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.education-levels-section__kicker {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-section-kicker);
+    font-weight: var(--font-weight-section-kicker);
+    letter-spacing: var(--letter-spacing-section-kicker);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.education-levels-section__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-section-title);
+    line-height: var(--line-height-section-title);
+    letter-spacing: var(--letter-spacing-section-title);
+    color: var(--color-type-heading);
+    max-width: var(--education-levels-title-max-width);
+    text-wrap: balance;
+}
+
+.education-levels-section__description {
+    max-width: 66ch;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-section-body);
+    line-height: var(--line-height-section-body);
+    color: var(--color-type-body-muted);
+}
+
+.education-levels-section__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 24px);
+}
+
+.education-level-card {
+    position: relative;
+    display: grid;
+    align-content: start;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 10%, var(--color-border-subtle));
+    border-radius: 30px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 24%),
+        color-mix(in srgb, var(--color-surface) 86%, transparent);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px) saturate(1.05);
+    -webkit-backdrop-filter: blur(14px) saturate(1.05);
+    overflow: hidden;
+    transition:
+        box-shadow var(--motion-duration-fast) var(--motion-ease-standard),
+        border-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.education-level-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-border-strong);
+}
+
+.education-level-card__media {
+    position: relative;
+    width: 100%;
+    height: var(--education-level-card-media-height);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-brand-primary) 10%, transparent), transparent 38%),
+        color-mix(in srgb, var(--color-surface-soft) 82%, transparent);
+}
+
+.education-level-card__image {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.education-level-card__body {
+    display: grid;
+    gap: 12px;
+    padding: 22px 20px 22px;
+}
+
+.education-level-card__highlight {
+    width: fit-content;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 14%, var(--color-border-subtle));
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface-soft) 84%, transparent);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-family-ui);
+    font-size: 0.82rem;
+    font-weight: var(--font-weight-ui-label);
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.education-level-card__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--education-level-card-title-size);
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+    color: var(--color-type-heading);
+}
+
+.education-level-card__description {
+    font-family: var(--font-family-body);
+    font-size: var(--education-level-card-description-size);
+    line-height: var(--education-level-card-description-line-height);
+    color: var(--color-type-body-muted);
+}
+
+.education-level-card__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 2px;
+}
+
+.education-level-chip {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 14px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 12%, var(--color-border-subtle));
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-family-ui);
+    font-size: var(--education-level-chip-size);
+    font-weight: var(--font-weight-ui-text);
+    color: var(--color-type-ui);
+}
+
+.education-level-chip--secondary {
+    border-color: color-mix(in srgb, var(--color-feedback-success) 20%, var(--color-border-subtle));
+    background-color: color-mix(in srgb, var(--color-feedback-success) 12%, var(--color-surface));
+    color: color-mix(in srgb, var(--color-feedback-success) 92%, var(--color-text-primary));
+}
+
+html[data-theme="dark"] .education-levels-section {
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-brand-primary) 12%, transparent), transparent 30%),
+        radial-gradient(circle at bottom right, color-mix(in srgb, var(--color-feedback-success) 12%, transparent), transparent 34%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--color-page-bg-alt) 90%, var(--color-surface)),
+            color-mix(in srgb, var(--color-page-bg) 92%, var(--color-surface))
+        );
+}
+
+html[data-theme="dark"] .education-levels-section__panel,
+html[data-theme="dark"] .education-level-card {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 24%),
+        color-mix(in srgb, var(--color-surface) 88%, transparent);
+}
+
+html[data-theme="dark"] .education-level-card:hover {
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.3),
+        0 0 0 1px color-mix(in srgb, var(--color-brand-primary-light) 18%, transparent) inset;
+    border-color: color-mix(in srgb, var(--color-brand-primary-light) 24%, var(--color-border-strong));
+}
+
+@media (max-width: 980px) {
+    .education-levels-section__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .education-levels-section__intro {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .education-levels-section__brand-logo {
+        width: min(132px, 30vw);
+    }
+
+    .education-levels-section__copy {
+        justify-items: center;
+    }
+
+    .education-levels-section__description {
+        max-width: 38ch;
+    }
+
+    .education-levels-section__title {
+        max-width: 15ch;
+    }
+}
+
+@media (max-width: 640px) {
+    .education-levels-section {
+        --education-level-card-media-height: 190px;
+    }
+
+    .education-levels-section {
+        padding-block: var(--space-2xl);
+    }
+
+    .education-levels-section__panel {
+        padding: 18px 16px;
+        border-radius: 26px;
+    }
+
+    .education-levels-section__title {
+        font-size: clamp(1.7rem, 6vw, 2.25rem);
+    }
+
+    .education-levels-section__description {
+        max-width: 100%;
+        font-size: 0.96rem;
+    }
+
+    .education-level-card {
+        border-radius: 24px;
+    }
+
+    .education-level-card__body {
+        gap: 10px;
+        padding: 18px 16px 18px;
+    }
+
+    .education-level-card__title {
+        font-size: 1.18rem;
+    }
+
+    .education-level-card__description {
+        font-size: 0.9rem;
+    }
+
+    .education-level-chip {
+        min-height: 38px;
+        font-size: 0.86rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .education-level-card {
+        transition: none !important;
+    }
+}

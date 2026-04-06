@@ -1,0 +1,204 @@
+/* =========================================================
+   HEADER
+   Estructura visual del header principal.
+   No incluye estilos del nav ni del theme toggle.
+   ========================================================= */
+
+.site-header {
+    position: sticky;
+    inset-block-start: 0;
+    z-index: 1000;
+    background-color: color-mix(in srgb, var(--color-surface) 82%, transparent);
+    border-block-end: 1px solid color-mix(in srgb, var(--color-white) 52%, transparent);
+    box-shadow: var(--shadow-header);
+    backdrop-filter: blur(18px) saturate(1.15);
+    -webkit-backdrop-filter: blur(18px) saturate(1.15);
+    transition:
+        background-color var(--motion-duration-base) var(--motion-ease-standard),
+        border-color var(--motion-duration-base) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-base) var(--motion-ease-standard),
+        backdrop-filter var(--motion-duration-base) var(--motion-ease-standard),
+        -webkit-backdrop-filter var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.site-header__inner {
+    min-height: var(--layout-header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-lg);
+    padding-block: 10px;
+}
+
+.site-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    flex-shrink: 0;
+    text-decoration: none;
+}
+
+.site-brand__logo {
+    width: auto;
+    height: 50px;
+    display: block;
+    flex-shrink: 0;
+    transform: translateY(0) scale(1) translateZ(0);
+    transform-origin: center center;
+    backface-visibility: hidden;
+    transition: height var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.site-brand__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 0;
+    gap: 2px;
+}
+
+.site-brand__name {
+    font-family: var(--font-family-ui);
+    font-size: 1.08rem;
+    font-weight: var(--font-weight-ui-text);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: var(--color-brand-primary);
+    text-wrap: balance;
+}
+
+.site-brand__tagline {
+    font-family: var(--font-family-ui);
+    font-size: 0.7rem;
+    font-weight: var(--font-weight-ui-label);
+    line-height: 1.2;
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: var(--color-feedback-success);
+    text-wrap: pretty;
+}
+
+.site-header__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    min-width: 0;
+    margin-inline-start: auto;
+    transition: none;
+}
+
+/* =========================================================
+   ESTADOS INTERACTIVOS BÁSICOS DE MARCA
+   ========================================================= */
+
+.site-brand:focus-visible {
+    border-radius: var(--radius-sm);
+}
+
+/* Mantiene transiciones suaves del branding sin alterar su caja real al hacer scroll. */
+.site-brand__logo,
+.site-brand__name,
+.site-brand__tagline {
+    transition:
+        height var(--motion-duration-base) var(--motion-ease-standard),
+        font-size var(--motion-duration-base) var(--motion-ease-standard),
+        color var(--motion-duration-base) var(--motion-ease-standard),
+        letter-spacing var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+.site-header__inner {
+    transition:
+        background-color var(--motion-duration-base) var(--motion-ease-standard),
+        border-color var(--motion-duration-base) var(--motion-ease-standard),
+        box-shadow var(--motion-duration-base) var(--motion-ease-standard),
+        min-height var(--motion-duration-base) var(--motion-ease-standard),
+        padding-top var(--motion-duration-base) var(--motion-ease-standard),
+        padding-bottom var(--motion-duration-base) var(--motion-ease-standard);
+}
+
+/* =========================================================
+   AJUSTES RESPONSIVOS
+   ========================================================= */
+
+@media (max-width: 900px) {
+    .site-header__inner {
+        gap: var(--space-md);
+    }
+
+    .site-brand__logo {
+        height: 46px;
+    }
+
+    .site-brand__name {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-header__inner {
+        min-height: 64px;
+        padding-block: 8px;
+    }
+
+    .site-brand__logo {
+        height: 42px;
+    }
+
+    .site-brand__name {
+        font-size: 0.98rem;
+    }
+
+    .site-brand__tagline {
+        font-size: 0.66rem;
+        letter-spacing: 0.07em;
+    }
+}
+
+@media (max-width: 640px) {
+    .site-brand__content {
+        gap: 2px;
+    }
+
+    .site-brand__tagline {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .site-brand {
+        flex: 1 1 auto;
+    }
+
+    .site-header__inner {
+        gap: var(--space-sm);
+    }
+
+    .site-brand__logo {
+        height: 38px;
+    }
+
+    .site-brand__name {
+        font-size: 0.92rem;
+        max-width: 18ch;
+        white-space: normal;
+    }
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .site-header {
+        background-color: color-mix(in srgb, var(--color-surface) 96%, transparent);
+        border-block-end-color: color-mix(in srgb, var(--color-border-subtle) 88%, transparent);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header,
+    .site-header__inner,
+    .site-brand__logo,
+    .site-brand__name,
+    .site-brand__tagline {
+        transition: none !important;
+    }
+}

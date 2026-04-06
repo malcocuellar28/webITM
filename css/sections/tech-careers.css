@@ -1,0 +1,505 @@
+/* =========================================================
+   TECH CAREERS
+   Sección de carreras técnicas. Presenta cards por programa,
+   hover basado en sombra sin desplazamiento y un bloque final
+   único con bot/assistant configurado desde el contenido.
+   ========================================================= */
+
+.tech-careers-section {
+    --tech-careers-title-max-width: 17ch;
+    --tech-career-card-title-size: 1.36rem;
+    --tech-career-card-description-size: 0.96rem;
+    --tech-career-card-description-line-height: 1.62;
+    --tech-career-card-feature-size: 0.93rem;
+    --tech-career-card-feature-line-height: 1.58;
+    --tech-career-card-note-size: 0.9rem;
+    --tech-career-card-note-line-height: 1.55;
+
+    position: relative;
+    padding-block: var(--space-3xl);
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-brand-accent) 12%, transparent), transparent 28%),
+        radial-gradient(circle at bottom left, color-mix(in srgb, var(--color-brand-primary) 10%, transparent), transparent 34%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--color-page-bg-alt) 86%, var(--color-surface-soft)),
+            color-mix(in srgb, var(--color-surface-soft-alt) 90%, var(--color-page-bg))
+        );
+}
+
+.tech-careers-section__panel {
+    position: relative;
+    display: grid;
+    gap: clamp(24px, 3vw, 36px);
+    padding: clamp(22px, 3vw, 34px);
+    border: 1px solid color-mix(in srgb, var(--color-brand-accent) 16%, var(--color-border-subtle));
+    border-radius: 34px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.18), transparent 22%),
+        color-mix(in srgb, var(--color-surface) 82%, transparent);
+    box-shadow: 0 22px 48px rgba(24, 40, 77, 0.10);
+    backdrop-filter: blur(18px) saturate(1.06);
+    -webkit-backdrop-filter: blur(18px) saturate(1.06);
+    overflow: hidden;
+}
+
+.tech-careers-section__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-brand-accent) 10%, transparent), transparent 30%),
+        radial-gradient(circle at bottom left, color-mix(in srgb, var(--color-brand-primary) 8%, transparent), transparent 34%);
+    pointer-events: none;
+}
+
+.tech-careers-section__intro {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(18px, 3vw, 28px);
+}
+
+.tech-careers-section__brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.tech-careers-section__brand-logo {
+    width: min(148px, 18vw);
+    min-width: 92px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.tech-careers-section__copy {
+    display: grid;
+    gap: 10px;
+    min-width: 0;
+}
+
+.tech-careers-section__kicker {
+    font-family: var(--font-family-ui);
+    font-size: var(--font-size-section-kicker);
+    font-weight: var(--font-weight-section-kicker);
+    letter-spacing: var(--letter-spacing-section-kicker);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.tech-careers-section__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--font-size-section-title);
+    line-height: var(--line-height-section-title);
+    letter-spacing: var(--letter-spacing-section-title);
+    color: var(--color-type-heading);
+    max-width: var(--tech-careers-title-max-width);
+    text-wrap: balance;
+}
+
+.tech-careers-section__description {
+    max-width: 66ch;
+    font-family: var(--font-family-body);
+    font-size: var(--font-size-section-body);
+    line-height: var(--line-height-section-body);
+    color: var(--color-type-body-muted);
+}
+
+.tech-careers-section__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(18px, 2.4vw, 24px);
+}
+
+.tech-career-card {
+    position: relative;
+    display: grid;
+    align-content: start;
+    border: 1px solid color-mix(in srgb, var(--color-brand-accent) 16%, var(--color-border-subtle));
+    border-radius: 30px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 24%),
+        color-mix(in srgb, var(--color-surface) 86%, transparent);
+    box-shadow: var(--shadow-md);
+    backdrop-filter: blur(14px) saturate(1.05);
+    -webkit-backdrop-filter: blur(14px) saturate(1.05);
+    overflow: hidden;
+    transition:
+        box-shadow var(--motion-duration-fast) var(--motion-ease-standard),
+        border-color var(--motion-duration-fast) var(--motion-ease-standard);
+}
+
+.tech-career-card:hover {
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-border-strong);
+}
+
+.tech-career-card__top-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 2;
+    min-height: 34px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 12px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-accent) 28%, transparent);
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-brand-accent) 22%, var(--color-surface));
+    box-shadow: 0 10px 20px rgba(24, 40, 77, 0.08);
+    font-family: var(--font-family-ui);
+    font-size: 0.76rem;
+    font-weight: var(--font-weight-ui-label);
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--color-brand-accent-dark) 85%, var(--color-text-primary));
+}
+
+.tech-career-card__media {
+    position: relative;
+    width: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    background:
+        radial-gradient(circle at top left, color-mix(in srgb, var(--color-brand-primary) 10%, transparent), transparent 38%),
+        color-mix(in srgb, var(--color-surface-soft) 82%, transparent);
+    overflow: hidden;
+}
+
+.tech-career-card__image {
+    width: 100%;
+    height: 100%;
+    min-height: 200px;
+    max-height: 200px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
+
+.tech-career-card__body {
+    display: grid;
+    gap: 12px;
+    padding: 22px 20px 22px;
+}
+
+.tech-career-card__area-tag {
+    width: fit-content;
+    min-height: 36px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 14%, var(--color-border-subtle));
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface-soft) 84%, transparent);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-family-ui);
+    font-size: 0.8rem;
+    font-weight: var(--font-weight-ui-label);
+    letter-spacing: var(--letter-spacing-ui-label);
+    text-transform: uppercase;
+    color: var(--color-brand-primary);
+}
+
+.tech-career-card__title {
+    font-family: var(--font-family-heading);
+    font-size: var(--tech-career-card-title-size);
+    line-height: 1.14;
+    letter-spacing: -0.015em;
+    color: var(--color-type-heading);
+}
+
+.tech-career-card__description {
+    font-family: var(--font-family-body);
+    font-size: var(--tech-career-card-description-size);
+    line-height: var(--tech-career-card-description-line-height);
+    color: var(--color-type-body-muted);
+}
+
+.tech-career-card__features {
+    display: grid;
+    gap: 10px;
+    padding-left: 0;
+    list-style: none;
+}
+
+.tech-career-card__features li {
+    position: relative;
+    padding-left: 18px;
+    font-family: var(--font-family-body);
+    font-size: var(--tech-career-card-feature-size);
+    line-height: var(--tech-career-card-feature-line-height);
+    color: var(--color-type-body);
+}
+
+.tech-career-card__features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.62em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        var(--color-brand-accent),
+        var(--color-brand-accent-dark)
+    );
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--color-brand-accent) 10%, transparent);
+    transform: translateY(-50%);
+}
+
+.tech-career-card__quote {
+    padding: 14px 15px;
+    border: 1px solid color-mix(in srgb, var(--color-text-secondary) 12%, transparent);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent 24%),
+        color-mix(in srgb, var(--color-surface-soft-alt) 88%, transparent);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    font-family: var(--font-family-body);
+    font-size: var(--tech-career-card-note-size);
+    line-height: var(--tech-career-card-note-line-height);
+    color: var(--color-type-body-muted);
+}
+
+.tech-career-card__duration {
+    width: fit-content;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 14px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 12%, var(--color-border-subtle));
+    border-radius: var(--radius-pill);
+    background-color: color-mix(in srgb, var(--color-surface) 88%, transparent);
+    box-shadow: var(--shadow-sm);
+    font-family: var(--font-family-ui);
+    font-size: 0.86rem;
+    font-weight: var(--font-weight-ui-text);
+    color: var(--color-type-ui);
+}
+
+.tech-careers-section__assistant {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 16px;
+    padding-top: 6px;
+}
+
+.tech-careers-section__assistant-bubble {
+    min-height: 138px;
+    display: flex;
+    align-items: center;
+    padding: 22px 24px;
+    border: 1px solid color-mix(in srgb, var(--color-brand-primary) 14%, var(--color-border-subtle));
+    border-radius: 28px;
+    background:
+        radial-gradient(circle at 18% 22%, color-mix(in srgb, var(--color-brand-accent) 16%, transparent), transparent 32%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.16), transparent 24%),
+        color-mix(in srgb, var(--color-surface-soft) 88%, transparent);
+    box-shadow:
+        0 18px 34px rgba(24, 40, 77, 0.12),
+        0 0 0 1px color-mix(in srgb, var(--color-brand-accent) 10%, transparent) inset;
+    font-family: var(--font-family-body);
+    font-size: 1.16rem;
+    font-weight: 600;
+    line-height: 1.72;
+    color: var(--color-type-heading);
+    text-wrap: pretty;
+}
+
+.tech-careers-section__assistant-icon {
+    width: 104px;
+    height: 104px;
+    display: block;
+    object-fit: contain;
+    flex-shrink: 0;
+    animation: tech-career-robot-float 3.2s ease-in-out infinite;
+}
+
+@keyframes tech-career-robot-float {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-6px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.tech-career-card__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+    padding-top: 2px;
+}
+
+html[data-theme="dark"] .tech-careers-section {
+    background:
+        radial-gradient(circle at top right, color-mix(in srgb, var(--color-brand-accent) 10%, transparent), transparent 28%),
+        radial-gradient(circle at bottom left, color-mix(in srgb, var(--color-brand-primary) 12%, transparent), transparent 34%),
+        linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--color-page-bg-alt) 90%, var(--color-surface)),
+            color-mix(in srgb, var(--color-page-bg) 92%, var(--color-surface))
+        );
+}
+
+html[data-theme="dark"] .tech-careers-section__panel,
+html[data-theme="dark"] .tech-career-card {
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 24%),
+        color-mix(in srgb, var(--color-surface) 88%, transparent);
+}
+
+html[data-theme="dark"] .tech-career-card:hover {
+    box-shadow:
+        0 18px 34px rgba(0, 0, 0, 0.3),
+        0 0 0 1px color-mix(in srgb, var(--color-brand-primary-light) 18%, transparent) inset;
+    border-color: color-mix(in srgb, var(--color-brand-primary-light) 24%, var(--color-border-strong));
+}
+
+html[data-theme="dark"] .tech-career-card__quote,
+html[data-theme="dark"] .tech-careers-section__assistant-bubble {
+    background:
+        radial-gradient(circle at 18% 22%, color-mix(in srgb, var(--color-brand-accent) 10%, transparent), transparent 32%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 24%),
+        color-mix(in srgb, var(--color-surface-soft) 90%, transparent);
+}
+
+@media (max-width: 1180px) {
+    .tech-careers-section__grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 860px) {
+    .tech-careers-section__grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .tech-careers-section__intro {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .tech-careers-section__brand-logo {
+        width: min(132px, 30vw);
+    }
+
+    .tech-careers-section__copy {
+        justify-items: center;
+    }
+
+    .tech-careers-section__description {
+        max-width: 38ch;
+    }
+
+    .tech-careers-section__title {
+        max-width: 15ch;
+    }
+}
+
+@media (max-width: 640px) {
+    .tech-careers-section {
+        padding-block: var(--space-2xl);
+    }
+
+    .tech-careers-section__panel {
+        padding: 18px 16px;
+        border-radius: 26px;
+    }
+
+    .tech-careers-section__title {
+        font-size: clamp(1.7rem, 6vw, 2.25rem);
+    }
+
+    .tech-careers-section__description {
+        max-width: 100%;
+        font-size: 0.96rem;
+    }
+
+    .tech-career-card {
+        border-radius: 24px;
+    }
+
+    .tech-career-card__top-tag {
+        top: 12px;
+        left: 12px;
+        min-height: 32px;
+        padding: 0 10px;
+        font-size: 0.72rem;
+    }
+
+    .tech-career-card__media,
+    .tech-career-card__image {
+        min-height: 176px;
+        max-height: 176px;
+    }
+
+    .tech-career-card__body {
+        gap: 10px;
+        padding: 18px 16px 18px;
+    }
+
+    .tech-career-card__title {
+        font-size: 1.16rem;
+    }
+
+    .tech-career-card__description,
+    .tech-career-card__features li,
+    .tech-career-card__quote {
+        font-size: 0.88rem;
+    }
+
+    .tech-careers-section__assistant {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .tech-careers-section__assistant-bubble {
+        min-height: 118px;
+        padding: 18px 18px;
+        font-size: 1rem;
+        line-height: 1.62;
+    }
+
+    .tech-careers-section__assistant-icon {
+        width: 72px;
+        height: 72px;
+        justify-self: end;
+    }
+
+    .tech-career-card__actions {
+        flex-direction: column;
+    }
+
+    .tech-career-card__actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tech-career-card,
+    .tech-careers-section__assistant-icon {
+        transition: none !important;
+        animation: none !important;
+    }
+}
