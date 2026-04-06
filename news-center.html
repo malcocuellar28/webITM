@@ -1,0 +1,695 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>
+        Centro de Noticias | Instituto Técnico Morazán
+    </title>
+    <meta name="description"
+        content="Centro de noticias del Instituto Técnico Morazán. Actualidad institucional, archivo editorial, noticias destacadas y publicaciones organizadas por páginas." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Instituto Técnico Morazán" />
+    <meta name="theme-color" content="#3663BF" />
+
+    <link rel="canonical" href="https://www.tecmorazan.edu.hn/news-center.html" />
+
+    <meta property="og:title" content="Centro de Noticias | Instituto Técnico Morazán" />
+    <meta property="og:description"
+        content="Explore el centro de noticias del Instituto Técnico Morazán con un visor editorial completo, archivo institucional y paginación por publicaciones." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tecmorazan.edu.hn/news-center.html" />
+    <meta property="og:site_name" content="Instituto Técnico Morazán" />
+    <meta property="og:locale" content="es_HN" />
+    <meta property="og:image" content="https://www.tecmorazan.edu.hn/img/branding/itm-logo.png" />
+    <meta property="og:image:alt" content="Logotipo del Instituto Técnico Morazán" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Centro de Noticias | Instituto Técnico Morazán" />
+    <meta name="twitter:description"
+        content="Noticias institucionales, archivo editorial y publicaciones completas del Instituto Técnico Morazán." />
+    <meta name="twitter:image" content="https://www.tecmorazan.edu.hn/img/branding/itm-logo.png" />
+    <meta name="twitter:image:alt" content="Logotipo del Instituto Técnico Morazán" />
+
+    <link rel="icon" type="image/svg+xml" href="img/branding/favicon.svg" />
+
+    <script>
+        document.documentElement.classList.add("js");
+
+        (function () {
+            try {
+                const urlTheme = new URLSearchParams(window.location.search).get("theme");
+                const storedTheme = localStorage.getItem("theme");
+                const activeTheme =
+                    urlTheme === "dark" || urlTheme === "light"
+                        ? urlTheme
+                        : storedTheme;
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    activeTheme === "dark" ? "dark" : "light"
+                );
+
+                if (urlTheme === "dark" || urlTheme === "light") {
+                    localStorage.setItem("theme", urlTheme);
+                }
+            } catch (error) {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
+
+    <!-- CSS: Core -->
+    <link rel="stylesheet" href="css/core/tokens.css" />
+    <link rel="stylesheet" href="css/core/fonts.css" />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/layout.css" />
+    <link rel="stylesheet" href="css/core/themes.css" />
+
+    <!-- CSS: UI -->
+    <link rel="stylesheet" href="css/ui/scroll-progress.css">
+    <link rel="stylesheet" href="css/ui/header.css" />
+    <link rel="stylesheet" href="css/ui/nav.css" />
+    <link rel="stylesheet" href="css/ui/theme-toggle.css">
+    <link rel="stylesheet" href="css/ui/breadcrumb.css">
+    <link rel="stylesheet" href="css/ui/buttons.css">
+    <link rel="stylesheet" href="css/ui/scroll-top.css">
+    <link rel="stylesheet" href="css/ui/toast.css">
+    <link rel="stylesheet" href="css/ui/footer.css">
+
+    <!-- CSS: Sections -->
+    <link rel="stylesheet" href="css/sections/news-center.css">
+
+    <!-- JS: Config -->
+    <script src="js/config/home-content.js" defer></script>
+    <script src="js/config/news-center-content.js" defer></script>
+
+    <!-- JS: UI -->
+    <script src="js/ui/toast.js" defer></script>
+    <script src="js/ui/theme.js" defer></script>
+    <script src="js/ui/theme-feedback.js" defer></script>
+    <script src="js/ui/nav.js" defer></script>
+    <script src="js/ui/header-scroll.js" defer></script>
+    <script src="js/ui/scroll-progress.js" defer></script>
+    <script src="js/ui/breadcrumb.js" defer></script>
+    <script src="js/ui/scroll-top.js" defer></script>
+    <script src="js/ui/footer.js" defer></script>
+
+    <!-- JS: Sections -->
+    <script src="js/sections/news-center.js" defer></script>
+
+    <!-- JS: Pages -->
+    <script src="js/pages/news-center.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "Centro de Noticias - Instituto Técnico Morazán",
+        "url": "https://www.tecmorazan.edu.hn/news-center.html",
+        "logo": "https://www.tecmorazan.edu.hn/img/branding/itm-logo.png",
+        "parentOrganization": {
+          "@type": "EducationalOrganization",
+          "name": "Instituto Técnico Morazán"
+        }
+      }
+    </script>
+</head>
+
+<body class="news-center-page">
+
+    <div class="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress__bar" id="scrollProgressBar"></span>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__inner">
+                <a href="index.html" class="site-brand" aria-label="Ir al inicio del Instituto Técnico Morazán">
+                    <img src="img/branding/itm-logo.png" alt="Instituto Técnico Morazán" class="site-brand__logo">
+                    <div class="site-brand__content">
+                        <span class="site-brand__name">Instituto Técnico Morazán</span>
+                        <span class="site-brand__tagline">Excelencia Educativa Técnica Empresarial</span>
+                    </div>
+                </a>
+
+                <div class="site-header__actions">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema"
+                        title="Cambiar tema">
+                        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.8"></circle>
+                                <path
+                                    d="M12 2.75V5.1M12 18.9v2.35M21.25 12H18.9M5.1 12H2.75M18.54 5.46l-1.66 1.66M7.12 16.88l-1.66 1.66M18.54 18.54l-1.66-1.66M7.12 7.12L5.46 5.46"
+                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                            </svg>
+                        </span>
+
+                        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M20 14.2A8 8 0 0 1 9.8 4A8.5 8.5 0 1 0 20 14.2Z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <nav class="site-nav" aria-label="Navegación principal">
+                        <button class="site-nav__toggle" type="button" aria-label="Abrir menú de navegación"
+                            aria-expanded="false" aria-controls="siteNavPanel">
+                            <span class="site-nav__toggle-box" aria-hidden="true">
+                                <span class="site-nav__toggle-line"></span>
+                                <span class="site-nav__toggle-line"></span>
+                                <span class="site-nav__toggle-line"></span>
+                            </span>
+                        </button>
+
+                        <div class="site-nav__panel" id="siteNavPanel">
+                            <ul class="site-nav__list">
+                                <li class="site-nav__item">
+                                    <a href="index.html#home" class="site-nav__link">
+                                        <img src="img/icons/nav/home.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Inicio</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="index.html#about-stats" class="site-nav__link" aria-label="Nosotros" title="Nosotros">
+                                        <img src="img/icons/nav/about.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Nosotros</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="index.html#education-levels" class="site-nav__link" aria-label="Niveles" title="Niveles">
+                                        <img src="img/icons/nav/education-levels.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Niveles</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="index.html#gallery" class="site-nav__link" aria-label="Galería" title="Galería">
+                                        <img src="img/icons/nav/gallery.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Galería</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="index.html#notices" class="site-nav__link" aria-label="Avisos" title="Avisos">
+                                        <img src="img/icons/nav/notices.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Avisos</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="news-center.html" class="site-nav__link" aria-current="page" aria-label="Noticias" title="Noticias">
+                                        <img src="img/icons/nav/news.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Noticias</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="index.html#contact" class="site-nav__link" aria-label="Contacto" title="Contacto">
+                                        <img src="img/icons/nav/contact.svg" alt="" class="site-nav__link-icon" aria-hidden="true">
+                                        <span class="site-nav__link-text">Contacto</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="site-breadcrumb" aria-label="Ruta de navegación">
+        <div class="container">
+            <ol class="site-breadcrumb__list">
+                <li class="site-breadcrumb__item">
+                    <a href="index.html" class="site-breadcrumb__link">Instituto Técnico Morazán</a>
+                </li>
+
+                <li class="site-breadcrumb__item" aria-current="page">
+                    <span class="site-breadcrumb__current"><span id="siteBreadcrumbCurrent">Centro de noticias</span></span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="site-main">
+        <section class="news-center-intro site-section" id="news-center" aria-labelledby="newsCenterTitle">
+            <div class="container">
+                <div class="news-center-intro__panel">
+                    <div class="news-center-intro__header">
+                        <a href="index.html#news" class="news-center-intro__back-link" id="newsCenterBackLink">
+                            <span class="news-center-intro__back-icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" class="news-center-inline-icon">
+                                    <path d="M14.5 6 8.5 12l6 6" fill="none" stroke="currentColor" stroke-width="1.8"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </span>
+                            <span id="newsCenterBackLabel">Volver al inicio</span>
+                        </a>
+
+                        <div class="news-center-intro__brand">
+                            <img
+                                src="img/icons/section/news-center.svg"
+                                alt="Centro de noticias"
+                                class="news-center-intro__logo"
+                                id="newsCenterLogo"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="news-center-intro__copy">
+                        <p class="news-center-intro__kicker" id="newsCenterKicker">
+                            Actualidad institucional
+                        </p>
+
+                        <h1 class="news-center-intro__title" id="newsCenterTitle">
+                            Centro de Noticias
+                        </h1>
+
+                        <p class="news-center-intro__description" id="newsCenterDescription">
+                            Un espacio editorial para presentar la actualidad del Instituto Técnico Morazán con una lectura clara, ordenada y visualmente sólida.
+                        </p>
+                    </div>
+
+                    <div class="news-center-intro__meta">
+                        <div class="news-center-intro__meta-card">
+                            <span class="news-center-intro__meta-label" id="newsCenterEditionLabel">Edición activa</span>
+                            <strong class="news-center-intro__meta-value" id="newsCenterEdition">Página 1</strong>
+                        </div>
+
+                        <div class="news-center-intro__meta-card">
+                            <span class="news-center-intro__meta-label" id="newsCenterVisibleCountLabel">Publicaciones visibles</span>
+                            <strong class="news-center-intro__meta-value" id="newsCenterVisibleCount">06 noticias</strong>
+                        </div>
+
+                        <div class="news-center-intro__meta-card">
+                            <span class="news-center-intro__meta-label" id="newsCenterUpdatedTextLabel">Actualizado</span>
+                            <strong class="news-center-intro__meta-value" id="newsCenterUpdatedLabel">15 Ene 2026</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-viewer-section site-section site-section--with-divider" aria-labelledby="newsViewerTitle">
+            <div class="container">
+                <div class="news-viewer-layout">
+                    <article class="news-viewer-card" id="newsViewerCard">
+                        <div class="news-viewer-card__media">
+                            <img
+                                src="img/news/noticia-principal.jpg"
+                                alt="Evento deportivo escolar"
+                                class="news-viewer-card__image"
+                                id="newsViewerImage"
+                                loading="lazy"
+                            >
+                        </div>
+
+                        <div class="news-viewer-card__content">
+                            <div class="news-viewer-card__meta">
+                                <div class="news-viewer-card__badges">
+                                    <span class="news-viewer-card__badge news-viewer-card__badge--primary" id="newsViewerBadge">
+                                        Destacada
+                                    </span>
+
+                                    <span class="news-viewer-card__badge news-viewer-card__badge--category" id="newsViewerCategory">
+                                        Institucional
+                                    </span>
+                                </div>
+
+                                <p class="news-viewer-card__date" id="newsViewerDate">
+                                    15 Ene 2026
+                                </p>
+                            </div>
+
+                            <h2 class="news-viewer-card__title" id="newsViewerTitle">
+                                Evento deportivo escolar
+                            </h2>
+
+                            <p class="news-viewer-card__excerpt" id="newsViewerExcerpt">
+                                Participación estudiantil en actividades deportivas intercolegiales que fortalecen el trabajo en equipo, la disciplina y el orgullo institucional.
+                            </p>
+
+                            <div class="news-viewer-card__body" id="newsViewerBody">
+                                <p>
+                                    El Instituto Técnico Morazán continúa impulsando experiencias formativas que fortalecen la disciplina, el compañerismo y la representación institucional.
+                                </p>
+
+                                <p>
+                                    Esta área funcionará como visor superior de la noticia activa correspondiente a la página actual de noticias.
+                                </p>
+                            </div>
+
+                            <div class="news-viewer-card__footer">
+                                <div class="news-viewer-card__share" id="newsViewerShare"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <aside class="news-viewer-sidebar">
+                        <article class="news-editorial-card">
+                            <p class="news-editorial-card__kicker" id="newsCenterEditorialKicker">
+                                Línea editorial
+                            </p>
+
+                            <h3 class="news-editorial-card__title" id="newsCenterEditorialTitle">
+                                Una lectura clara de la actualidad institucional
+                            </h3>
+
+                            <p class="news-editorial-card__text" id="newsCenterEditorialText">
+                                El visor superior siempre muestra la noticia activa de la página actual para que el lector no pierda contexto.
+                            </p>
+                        </article>
+
+                        <article class="news-pagination-card">
+                            <p class="news-pagination-card__kicker" id="newsCenterPaginationKicker">
+                                Archivo
+                            </p>
+
+                            <h3 class="news-pagination-card__title" id="newsCenterPaginationTitle">
+                                Paginación editorial
+                            </h3>
+
+                            <nav class="news-pagination-card__nav" aria-label="Paginación del centro de noticias">
+                                <a href="#" class="news-pagination-card__edge is-disabled" id="newsCenterPrevPage" aria-disabled="true">
+                                    Anterior
+                                </a>
+
+                                <div class="news-pagination-card__pages" id="newsCenterPages">
+                                    <span class="news-pagination-card__page is-active" aria-current="page">01</span>
+                                    <a href="#" class="news-pagination-card__page">02</a>
+                                    <a href="#" class="news-pagination-card__page">03</a>
+                                </div>
+
+                                <a href="#" class="news-pagination-card__edge" id="newsCenterNextPage">
+                                    Siguiente
+                                </a>
+                            </nav>
+                        </article>
+                    </aside>
+                </div>
+
+                <div class="news-viewer-gallery" id="newsViewerGallery">
+                    <article class="news-viewer-gallery__item" id="newsViewerGalleryItem1">
+                        <img
+                            src="img/news/noticia-principal-2.jpg"
+                            alt="Imagen adicional de noticia"
+                            class="news-viewer-gallery__image"
+                            id="newsViewerGalleryImage1"
+                            loading="lazy"
+                        >
+                    </article>
+
+                    <article class="news-viewer-gallery__item" id="newsViewerGalleryItem2">
+                        <img
+                            src="img/news/noticia-principal-3.jpg"
+                            alt="Imagen adicional de noticia"
+                            class="news-viewer-gallery__image"
+                            id="newsViewerGalleryImage2"
+                            loading="lazy"
+                        >
+                    </article>
+
+                    <article class="news-viewer-gallery__item" id="newsViewerGalleryItem3">
+                        <img
+                            src="img/news/noticia-principal-4.jpg"
+                            alt="Imagen adicional de noticia"
+                            class="news-viewer-gallery__image"
+                            id="newsViewerGalleryImage3"
+                            loading="lazy"
+                        >
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-page-list-section site-section site-section--with-divider" aria-labelledby="newsPageListTitle">
+            <div class="container">
+                <div class="news-page-list-section__header">
+                    <div class="news-page-list-section__copy">
+                        <p class="news-page-list-section__kicker" id="newsPageListKicker">
+                            Noticias de esta página
+                        </p>
+
+                        <h2 class="news-page-list-section__title" id="newsPageListTitle">
+                            Selecciona una noticia
+                        </h2>
+
+                        <p class="news-page-list-section__description" id="newsPageListDescription">
+                            Elige una publicación y el visor superior cambiará a esa noticia sin sacarte de la página actual.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="news-page-list-grid" id="newsPageListGrid">
+                    <article class="news-page-card is-active" data-news-id="evento-deportivo-escolar-2026">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-principal.jpg" alt="Evento deportivo escolar" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Institucional</span>
+                                <span class="news-page-card__date">15 Ene 2026</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Evento deportivo escolar
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Participación estudiantil en actividades deportivas intercolegiales que fortalecen el trabajo en equipo, la disciplina y el orgullo institucional.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-page-card" data-news-id="feria-academica-2026">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-2.jpg" alt="Feria académica" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Institucional</span>
+                                <span class="news-page-card__date">10 Ene 2026</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Feria académica
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Presentación de proyectos desarrollados por estudiantes de distintas áreas formativas.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-page-card" data-news-id="jornada-cultural-2026">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-3.jpg" alt="Jornada cultural" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Cultura</span>
+                                <span class="news-page-card__date">07 Ene 2026</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Jornada cultural
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Actividades artísticas y expresivas que fortalecen identidad, creatividad y participación.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-page-card" data-news-id="reconocimiento-academico-2026">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-4.jpg" alt="Reconocimiento académico" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Logros</span>
+                                <span class="news-page-card__date">04 Ene 2026</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Reconocimiento académico
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Estudiantes destacados reciben reconocimiento por su rendimiento y compromiso institucional.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-page-card" data-news-id="visita-educativa-2026">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-5.jpg" alt="Visita educativa" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Visitas</span>
+                                <span class="news-page-card__date">02 Ene 2026</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Visita educativa
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Espacios de aprendizaje fuera del aula que conectan teoría, práctica y contexto real.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="news-page-card" data-news-id="vida-estudiantil-2025">
+                        <div class="news-page-card__media">
+                            <img src="img/news/noticia-6.jpg" alt="Vida estudiantil" class="news-page-card__image" loading="lazy">
+                        </div>
+
+                        <div class="news-page-card__content">
+                            <div class="news-page-card__meta">
+                                <span class="news-page-card__category">Vida estudiantil</span>
+                                <span class="news-page-card__date">28 Dic 2025</span>
+                            </div>
+
+                            <h3 class="news-page-card__title">
+                                Vida estudiantil
+                            </h3>
+
+                            <p class="news-page-card__excerpt">
+                                Actividades institucionales continúan fortaleciendo participación, identidad y convivencia.
+                            </p>
+
+                            <a href="#" class="news-page-card__link">
+                                Leer en el visor
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" id="footer">
+        <div class="site-footer__shape-divider" aria-hidden="true">
+            <svg viewBox="0 0 1000 100" preserveAspectRatio="none" class="site-footer__shape-svg">
+                <path d="M0 0v4c136 143.8 183.8-73.2 297 26.6 72.2 63.7 97 99 184.7 33.2a30.5 30.5 0 0 1 36.6 0c87.6 65.8 112.5 30.5 184.7-33.2C816.2-69.2 864 147.7 1000 4V0H0Z"></path>
+            </svg>
+        </div>
+
+        <div class="site-footer__body">
+            <div class="site-footer__container">
+                <div class="site-footer__grid">
+                    <section class="site-footer__brand" aria-labelledby="footerBrandTitle">
+                        <div class="site-footer__brand-logo-wrap">
+                            <img src="" alt="" class="site-footer__brand-logo" id="footerLogo">
+                        </div>
+
+                        <div class="site-footer__brand-copy">
+                            <h2 class="site-footer__brand-title" id="footerBrandTitle"></h2>
+                            <p class="site-footer__brand-motto" id="footerMotto"></p>
+                        </div>
+                    </section>
+
+                    <nav class="site-footer__contact" aria-labelledby="footerContactTitle">
+                        <h3 class="site-footer__title" id="footerContactTitle"></h3>
+
+                        <ul class="site-footer__list">
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <path d="M12 21s-6-5.25-6-11a6 6 0 1 1 12 0c0 5.75-6 11-6 11Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                        <circle cx="12" cy="10" r="2.35" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                                    </svg>
+                                </span>
+                                <span class="site-footer__item-text" id="footerAddress"></span>
+                            </li>
+
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <path d="M6.75 4.75h2.15c.35 0 .68.2.83.52l1.18 2.62a1 1 0 0 1-.18 1.08l-1.2 1.38a12.7 12.7 0 0 0 4.12 4.12l1.38-1.2a1 1 0 0 1 1.08-.18l2.62 1.18c.32.15.52.48.52.83v2.15a1.75 1.75 0 0 1-1.92 1.74C10.1 19.42 4.58 13.9 4.01 6.67A1.75 1.75 0 0 1 5.75 4.75Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <span class="site-footer__item-text" id="footerPhones"></span>
+                            </li>
+
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <rect x="3.75" y="5.75" width="16.5" height="12.5" rx="2.25" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                                        <path d="M4.75 7.25 12 12.35l7.25-5.1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </span>
+                                <a href="" class="site-footer__item-link" id="footerEmail"></a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="site-footer__links" aria-labelledby="footerLinksTitle">
+                        <h3 class="site-footer__title" id="footerLinksTitle"></h3>
+                        <ul class="site-footer__menu" id="footerMenu"></ul>
+                    </nav>
+
+                    <section class="site-footer__social" aria-labelledby="footerSocialTitle">
+                        <h3 class="site-footer__title" id="footerSocialTitle"></h3>
+
+                        <div class="site-footer__social-links">
+                            <a href="" class="site-footer__social-button" id="footerFacebook" target="_blank" rel="noopener">
+                                <img src="" alt="" class="site-footer__social-icon">
+                                <span></span>
+                            </a>
+
+                            <a href="" class="site-footer__social-button" id="footerInstagram" target="_blank" rel="noopener">
+                                <img src="" alt="" class="site-footer__social-icon">
+                                <span></span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="site-footer__morazan" aria-label="Francisco Morazán">
+                        <img src="" alt="" class="site-footer__morazan-image" id="footerMorazanImage">
+                    </section>
+                </div>
+
+                <div class="site-footer__bottom">
+                    <p class="site-footer__copyright" id="footerCopyright"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

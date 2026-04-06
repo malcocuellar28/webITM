@@ -1,0 +1,1984 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+
+    <title>
+        Instituto Técnico Morazán | Formación integral y excelencia educativa
+    </title>
+    <meta name="description"
+        content="El Instituto Técnico Morazán es una institución comprometida con la formación integral de sus estudiantes, con programas académicos y actividades extracurriculares en San Pedro Sula, Honduras." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Instituto Técnico Morazán" />
+    <meta name="theme-color" content="#3663BF" />
+
+    <!-- Revisar cuando el dominio oficial final quede totalmente confirmado -->
+    <link rel="canonical" href="https://www.tecmorazan.edu.hn/" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Instituto Técnico Morazán | Formación integral y excelencia educativa" />
+    <meta property="og:description"
+        content="Explore los programas académicos y actividades extracurriculares del Instituto Técnico Morazán. Un entorno de aprendizaje diseñado para impulsar el máximo potencial de cada estudiante." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tecmorazan.edu.hn/" />
+    <meta property="og:site_name" content="Instituto Técnico Morazán" />
+    <meta property="og:locale" content="es_HN" />
+    <meta property="og:image" content="https://www.tecmorazan.edu.hn/img/branding/itm-logo.png" />
+    <meta property="og:image:alt" content="Logotipo del Instituto Técnico Morazán" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Instituto Técnico Morazán | Formación integral y excelencia educativa" />
+    <meta name="twitter:description"
+        content="Programas académicos, formación integral y actividades extracurriculares para impulsar el potencial de cada estudiante." />
+    <meta name="twitter:image" content="https://www.tecmorazan.edu.hn/img/branding/LogoITM.png" />
+    <meta name="twitter:image:alt" content="Logotipo del Instituto Técnico Morazán" />
+
+    <link rel="icon" type="image/svg+xml" href="img/branding/favicon.svg" />
+
+    <!-- Bootstrap temprano: JS disponible + tema inicial antes de pintar la UI -->
+    <script>
+        document.documentElement.classList.add("js");
+
+        (function () {
+            try {
+                const urlTheme = new URLSearchParams(window.location.search).get(
+                    "theme",
+                );
+                const storedTheme = localStorage.getItem("theme");
+                const activeTheme =
+                    urlTheme === "dark" || urlTheme === "light"
+                        ? urlTheme
+                        : storedTheme;
+
+                document.documentElement.setAttribute(
+                    "data-theme",
+                    activeTheme === "dark" ? "dark" : "light",
+                );
+
+                if (urlTheme === "dark" || urlTheme === "light") {
+                    localStorage.setItem("theme", urlTheme);
+                }
+            } catch (error) {
+                document.documentElement.setAttribute("data-theme", "light");
+            }
+        })();
+    </script>
+
+    <!-- CSS: Core -->
+    <link rel="stylesheet" href="css/core/tokens.css" />
+    <link rel="stylesheet" href="css/core/fonts.css" />
+    <link rel="stylesheet" href="css/core/base.css" />
+    <link rel="stylesheet" href="css/core/layout.css" />
+    <link rel="stylesheet" href="css/core/themes.css" />
+
+    <!-- CSS: UI -->
+    <link rel="stylesheet" href="css/ui/loader.css">
+    <link rel="stylesheet" href="css/ui/scroll-progress.css">
+    <link rel="stylesheet" href="css/ui/header.css" />
+    <link rel="stylesheet" href="css/ui/nav.css" />
+    <link rel="stylesheet" href="css/ui/theme-toggle.css">
+    <link rel="stylesheet" href="css/ui/breadcrumb.css">
+    <link rel="stylesheet" href="css/ui/buttons.css">
+    <link rel="stylesheet" href="css/ui/modal.css">
+    <link rel="stylesheet" href="css/ui/floating-whatsapp.css">
+    <link rel="stylesheet" href="css/ui/scroll-top.css">
+    <link rel="stylesheet" href="css/ui/toast.css">
+    <link rel="stylesheet" href="css/ui/footer.css">
+
+    <!-- CSS: Sections -->
+    <link rel="stylesheet" href="css/sections/hero.css">
+    <link rel="stylesheet" href="css/sections/about-stats.css">
+    <link rel="stylesheet" href="css/sections/about.css">
+    <link rel="stylesheet" href="css/sections/faq.css">
+    <link rel="stylesheet" href="css/sections/education-levels.css">
+    <link rel="stylesheet" href="css/sections/tech-careers.css">
+    <link rel="stylesheet" href="css/sections/gallery.css">
+    <link rel="stylesheet" href="css/sections/countdown.css">
+    <link rel="stylesheet" href="css/sections/notices.css">
+    <link rel="stylesheet" href="css/sections/events.css">
+    <link rel="stylesheet" href="css/sections/testimonials.css">
+    <link rel="stylesheet" href="css/sections/news.css">
+    <link rel="stylesheet" href="css/sections/contact.css">
+
+    <!-- JS: Config -->
+    <script src="js/config/home-content.js" defer></script>
+    <script src="js/config/modal-config.js" defer></script>
+
+    <!-- JS: UI -->
+    <script src="js/ui/toast.js" defer></script>
+    <script src="js/ui/theme.js" defer></script>
+    <script src="js/ui/theme-feedback.js" defer></script>
+    <script src="js/ui/loader.js" defer></script>
+    <script src="js/ui/nav.js" defer></script>
+    <script src="js/ui/header-scroll.js" defer></script>
+    <script src="js/ui/scroll-progress.js" defer></script>
+    <script src="js/ui/breadcrumb.js" defer></script>
+    <script src="js/ui/modal.js" defer></script>
+    <script src="js/ui/scroll-top.js" defer></script>
+    <script src="js/ui/footer.js" defer></script>
+
+    <!-- JS: Sections -->
+    <script src="js/sections/hero.js" defer></script>
+    <script src="js/sections/about-stats.js" defer></script>
+    <script src="js/sections/about.js" defer></script>
+    <script src="js/sections/faq.js" defer></script>
+    <script src="js/sections/education-levels.js" defer></script>
+    <script src="js/sections/tech-careers.js" defer></script>
+    <script src="js/sections/gallery.js" defer></script>
+    <script src="js/sections/countdown.js" defer></script>
+    <script src="js/sections/notices.js" defer></script>
+    <script src="js/sections/events.js" defer></script>
+    <script src="js/sections/testimonials.js" defer></script>
+    <script src="js/sections/news.js" defer></script>
+    <script src="js/sections/contact.js" defer></script>
+
+    <!-- JS: Pages -->
+    <script src="js/pages/home.js" defer></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Instituto Técnico Morazán",
+        "description": "Institución comprometida con la formación integral de sus estudiantes, con programas académicos y actividades extracurriculares en San Pedro Sula, Honduras.",
+        "url": "https://www.tecmorazan.edu.hn",
+        "logo": "https://www.tecmorazan.edu.hn/img/branding/LogoITM.png",
+        "telephone": "+5042557-2360",
+        "email": "info@tecmorazan.edu.hn",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Barrio Guamilito, 2 avenida, 5 y 6 calle",
+          "addressLocality": "San Pedro Sula",
+          "addressRegion": "Cortés",
+          "addressCountry": "HN"
+        },
+        "sameAs": [
+          "https://www.facebook.com/tecnicomorazanhn/",
+          "https://www.instagram.com/tecnicomorazan/"
+        ]
+      }
+    </script>
+</head>
+
+<body>
+
+    <div class="site-loader" id="siteLoader" aria-hidden="true">
+        <div class="site-loader__content">
+            <img src="img/branding/itm-logo.png" alt="Instituto Técnico Morazán" class="site-loader__logo">
+            <img src="img/icons/ui/spinner.svg" alt="" class="site-loader__spinner" aria-hidden="true">
+        </div>
+    </div>
+
+    <div class="scroll-progress" aria-hidden="true">
+        <span class="scroll-progress__bar" id="scrollProgressBar"></span>
+    </div>
+
+    <header class="site-header">
+        <div class="container">
+            <div class="site-header__inner">
+                <a href="index.html" class="site-brand" aria-label="Ir al inicio del Instituto Técnico Morazán">
+                    <img src="img/branding/itm-logo.png" alt="Instituto Técnico Morazán" class="site-brand__logo">
+                    <div class="site-brand__content">
+                        <span class="site-brand__name">Instituto Técnico Morazán</span>
+                        <span class="site-brand__tagline">Excelencia Educativa Técnica Empresarial</span>
+                    </div>
+                </a>
+
+                <div class="site-header__actions">
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar tema"
+                        title="Cambiar tema">
+                        <span class="theme-toggle__icon theme-toggle__icon--sun" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="4.25" stroke="currentColor" stroke-width="1.8"></circle>
+                                <path
+                                    d="M12 2.75V5.1M12 18.9v2.35M21.25 12H18.9M5.1 12H2.75M18.54 5.46l-1.66 1.66M7.12 16.88l-1.66 1.66M18.54 18.54l-1.66-1.66M7.12 7.12L5.46 5.46"
+                                    stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+                            </svg>
+                        </span>
+
+                        <span class="theme-toggle__icon theme-toggle__icon--moon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <path d="M20 14.2A8 8 0 0 1 9.8 4A8.5 8.5 0 1 0 20 14.2Z" stroke="currentColor"
+                                    stroke-width="1.8" stroke-linejoin="round"></path>
+                            </svg>
+                        </span>
+                    </button>
+
+                    <nav class="site-nav" aria-label="Navegación principal">
+                        <button class="site-nav__toggle" type="button" aria-label="Abrir menú de navegación"
+                            aria-expanded="false" aria-controls="siteNavPanel">
+                            <span class="site-nav__toggle-box" aria-hidden="true">
+                                <span class="site-nav__toggle-line"></span>
+                                <span class="site-nav__toggle-line"></span>
+                                <span class="site-nav__toggle-line"></span>
+                            </span>
+                        </button>
+
+                        <div class="site-nav__panel" id="siteNavPanel">
+                            <ul class="site-nav__list">
+                                <li class="site-nav__item">
+                                    <a href="#home" class="site-nav__link" aria-current="page">
+                                        <img src="img/icons/nav/home.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Inicio</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#about-stats" class="site-nav__link" aria-label="Nosotros" title="Nosotros">
+                                        <img src="img/icons/nav/about.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Nosotros</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#education-levels" class="site-nav__link" aria-label="Niveles" title="Niveles">
+                                        <img src="img/icons/nav/education-levels.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Niveles</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#gallery" class="site-nav__link" aria-label="Galeria" title="Galeria">
+                                        <img src="img/icons/nav/gallery.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Galería</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#notices" class="site-nav__link" aria-label="Avisos" title="Avisos">
+                                        <img src="img/icons/nav/notices.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Avisos</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#news" class="site-nav__link" aria-label="Noticia" title="Noticias">
+                                        <img src="img/icons/nav/news.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Noticias</span>
+                                    </a>
+                                </li>
+
+                                <li class="site-nav__item">
+                                    <a href="#contact" class="site-nav__link" aria-label="Contacto" title="Contacto">
+                                        <img src="img/icons/nav/contact.svg" alt="" class="site-nav__link-icon"
+                                            aria-hidden="true">
+                                        <span class="site-nav__link-text">Contacto</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="site-breadcrumb" aria-label="Ruta de navegación">
+        <div class="container">
+            <ol class="site-breadcrumb__list">
+                <li class="site-breadcrumb__item">
+                    <a href="index.html" class="site-breadcrumb__link">Instituto Técnico Morazán</a>
+                </li>
+
+                <li class="site-breadcrumb__item" aria-current="page">
+                    <span class="site-breadcrumb__current"><span id="siteBreadcrumbCurrent">Inicio</span></span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <main class="site-main">
+
+        <section class="hero-section site-section" id="home" aria-labelledby="heroTitleIntro">
+            <img class="hero-section__background-image" id="heroBackgroundImage" alt="" aria-hidden="true" hidden>
+            <div class="container">
+                <div class="hero-section__shell">
+                    <img class="hero-section__student-ambient" id="heroStudentFigureImage" alt="" aria-hidden="true">
+
+                    <div class="hero-section__content">
+                        <p class="hero-section__kicker" id="heroKicker"></p>
+
+                        <h1 class="hero-section__title" id="heroTitleIntro"></h1>
+
+                        <p class="hero-section__tagline" id="heroLema"></p>
+
+                        <p class="hero-section__subtitle" id="heroSubtitle"></p>
+
+                        <div class="hero-section__actions" id="heroActions"></div>
+
+                        <ul class="hero-section__highlights" id="heroHighlights"
+                            aria-label="Aspectos destacados del instituto"></ul>
+                    </div>
+
+                    <div class="hero-section__media">
+                        <div class="hero-section__visual-stack">
+                            <div class="hero-section__visual">
+                                <div class="hero-section__slides" id="heroSlides" aria-live="polite"></div>
+                            </div>
+
+                            <div class="hero-section__visual-meta">
+                                <div class="hero-section__slide-note-panel" id="heroSlideNote"></div>
+
+                                <div class="hero-section__dots" id="heroMainDots"
+                                    aria-label="Imágenes destacadas del hero"></div>
+                            </div>
+                        </div>
+
+                        <aside class="hero-section__support-card" id="heroSupportCard">
+                            <div class="hero-section__support-media">
+                                <img class="hero-section__support-image" id="heroSupportCardImage" alt="">
+                            </div>
+
+                            <div class="hero-section__support-content">
+                                <p class="hero-section__support-label" id="heroSupportCardLabel"></p>
+
+                                <h2 class="hero-section__support-title" id="heroSupportCardTitle"></h2>
+
+                                <p class="hero-section__support-text" id="heroSupportCardText"></p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-stats-section site-section site-section--with-divider" id="about-stats"
+            aria-labelledby="aboutStatsTitle">
+            <div class="container">
+                <div class="about-stats-section__panel">
+                    <div class="about-stats-section__intro">
+                        <div class="about-stats-section__brand">
+                            <img alt="" class="about-stats-section__brand-logo" id="aboutStatsLogo">
+                        </div>
+
+                        <div class="about-stats-section__copy">
+                            <p class="about-stats-section__kicker" id="aboutStatsKicker"></p>
+                            <h2 class="about-stats-section__title" id="aboutStatsTitle"></h2>
+                            <p class="about-stats-section__description" id="aboutStatsDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="about-stats-section__grid" id="aboutStatsGrid">
+                        <article class="about-stats-card">
+                            <div class="about-stats-card__icon-slot">
+                                <img src="" alt="" class="about-stats-card__icon" loading="lazy">
+                            </div>
+
+                            <p class="about-stats-card__value" data-count-target="" data-count-prefix=""
+                                data-count-suffix=""></p>
+
+                            <h3 class="about-stats-card__title"></h3>
+                            <p class="about-stats-card__text"></p>
+                        </article>
+
+                        <article class="about-stats-card">
+                            <div class="about-stats-card__icon-slot">
+                                <img src="" alt="" class="about-stats-card__icon" loading="lazy">
+                            </div>
+
+                            <p class="about-stats-card__value" data-count-target="" data-count-prefix=""
+                                data-count-suffix=""></p>
+
+                            <h3 class="about-stats-card__title"></h3>
+                            <p class="about-stats-card__text"></p>
+                        </article>
+
+                        <article class="about-stats-card">
+                            <div class="about-stats-card__icon-slot">
+                                <img src="" alt="" class="about-stats-card__icon" loading="lazy">
+                            </div>
+
+                            <p class="about-stats-card__value" data-count-target="" data-count-prefix=""
+                                data-count-suffix=""></p>
+
+                            <h3 class="about-stats-card__title"></h3>
+                            <p class="about-stats-card__text"></p>
+                        </article>
+
+                        <article class="about-stats-card">
+                            <div class="about-stats-card__icon-slot">
+                                <img src="" alt="" class="about-stats-card__icon" loading="lazy">
+                            </div>
+
+                            <p class="about-stats-card__value" data-count-target="" data-count-prefix=""
+                                data-count-suffix=""></p>
+
+                            <h3 class="about-stats-card__title"></h3>
+                            <p class="about-stats-card__text"></p>
+                        </article>
+                    </div>
+
+                    <div class="about-stats-section__actions" id="aboutStatsActions">
+                        <a href="" class="btn btn-action" id="aboutStatsPrimaryCta"></a>
+                        <a href="" class="btn btn-glass" id="aboutStatsSecondaryCta"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section site-section site-section--with-divider" id="about"
+            aria-labelledby="aboutTitle">
+            <div class="container">
+                <div class="about-section__panel">
+                    <div class="about-section__intro">
+                        <div class="about-section__brand">
+                            <img alt="" class="about-section__brand-logo" id="aboutLogo">
+                        </div>
+
+                        <div class="about-section__copy">
+                            <p class="about-section__kicker" id="aboutKicker"></p>
+
+                            <h2 class="about-section__title" id="aboutTitle"></h2>
+
+                            <p class="about-section__description" id="aboutDescription"></p>
+
+                            <p class="about-section__support-note" id="aboutSupportNote"></p>
+                        </div>
+                    </div>
+
+                    <div class="about-section__layout">
+                        <div class="about-section__main">
+                            <div class="about-section__cards" id="aboutCards">
+                                <article class="about-feature-card about-feature-card--mission" id="aboutMissionCard">
+                                    <div class="about-feature-card__icon-slot">
+                                        <img src="" alt="" class="about-feature-card__icon" id="aboutMissionIcon"
+                                            loading="lazy">
+                                    </div>
+
+                                    <div class="about-feature-card__content">
+                                        <p class="about-feature-card__eyebrow" id="aboutMissionEyebrow"></p>
+                                        <h3 class="about-feature-card__title" id="aboutMissionTitle"></h3>
+                                        <p class="about-feature-card__text" id="aboutMissionText"></p>
+                                    </div>
+                                </article>
+
+                                <article class="about-feature-card about-feature-card--vision" id="aboutVisionCard">
+                                    <div class="about-feature-card__icon-slot">
+                                        <img src="" alt="" class="about-feature-card__icon" id="aboutVisionIcon"
+                                            loading="lazy">
+                                    </div>
+
+                                    <div class="about-feature-card__content">
+                                        <p class="about-feature-card__eyebrow" id="aboutVisionEyebrow"></p>
+                                        <h3 class="about-feature-card__title" id="aboutVisionTitle"></h3>
+                                        <p class="about-feature-card__text" id="aboutVisionText"></p>
+                                    </div>
+                                </article>
+                            </div>
+
+                            <div class="about-section__highlights" id="aboutHighlights"></div>
+
+                            <div class="about-section__actions" id="aboutActions">
+                                <a href="" class="btn btn-action" id="aboutPrimaryCta"></a>
+                                <a href="" class="btn btn-glass" id="aboutSecondaryCta"></a>
+                            </div>
+                        </div>
+
+                        <aside class="about-section__media-card" id="aboutMediaCard">
+                            <div class="about-section__media-shell" id="aboutMediaShell">
+                                <img src="" alt="" class="about-section__media-image" id="aboutMediaImage">
+
+                                <iframe class="about-section__media-embed" id="aboutMediaEmbed" src=""
+                                    title="Video institucional" loading="lazy"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen hidden></iframe>
+
+                                <video class="about-section__media-video" id="aboutMediaVideo" controls
+                                    preload="metadata" playsinline hidden></video>
+                            </div>
+
+                            <div class="about-section__media-caption" id="aboutMediaCaption"></div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq-section site-section site-section--with-divider" id="faq" aria-labelledby="faqTitle">
+            <div class="container">
+                <div class="faq-section__panel">
+                    <div class="faq-section__intro">
+                        <div class="faq-section__brand">
+                            <img alt="" class="faq-section__brand-logo" id="faqLogo">
+                        </div>
+
+                        <div class="faq-section__copy">
+                            <p class="faq-section__kicker" id="faqKicker"></p>
+                            <h2 class="faq-section__title" id="faqTitle"></h2>
+                            <p class="faq-section__description" id="faqDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="faq-section__layout">
+                        <div class="faq-section__accordion" id="faqAccordion">
+                            <article class="faq-item is-open">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="true"
+                                        aria-controls="faqPanel1" id="faqTrigger1">
+                                        <span class="faq-item__question" id="faqQuestion1"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel1" role="region" aria-labelledby="faqTrigger1">
+                                    <div class="faq-item__answer" id="faqAnswer1"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel2" id="faqTrigger2">
+                                        <span class="faq-item__question" id="faqQuestion2"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel2" role="region" aria-labelledby="faqTrigger2"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer2"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel3" id="faqTrigger3">
+                                        <span class="faq-item__question" id="faqQuestion3"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel3" role="region" aria-labelledby="faqTrigger3"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer3"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel4" id="faqTrigger4">
+                                        <span class="faq-item__question" id="faqQuestion4"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel4" role="region" aria-labelledby="faqTrigger4"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer4"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel5" id="faqTrigger5">
+                                        <span class="faq-item__question" id="faqQuestion5"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel5" role="region" aria-labelledby="faqTrigger5"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer5"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel6" id="faqTrigger6">
+                                        <span class="faq-item__question" id="faqQuestion6"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel6" role="region" aria-labelledby="faqTrigger6"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer6"></div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <h3 class="faq-item__heading">
+                                    <button class="faq-item__trigger" type="button" aria-expanded="false"
+                                        aria-controls="faqPanel7" id="faqTrigger7">
+                                        <span class="faq-item__question" id="faqQuestion7"></span>
+                                        <span class="faq-item__icon" aria-hidden="true"></span>
+                                    </button>
+                                </h3>
+
+                                <div class="faq-item__panel" id="faqPanel7" role="region" aria-labelledby="faqTrigger7"
+                                    hidden>
+                                    <div class="faq-item__answer" id="faqAnswer7"></div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <aside class="faq-section__aside">
+                            <div class="faq-section__aside-card">
+                                <p class="faq-section__aside-kicker" id="faqAsideKicker"></p>
+                                <h3 class="faq-section__aside-title" id="faqAsideTitle"></h3>
+                                <p class="faq-section__aside-text" id="faqAsideText"></p>
+
+                                <div class="faq-section__actions" id="faqActions">
+                                    <a href="" class="btn btn-action" id="faqPrimaryCta"></a>
+                                    <a href="" class="btn btn-glass" id="faqSecondaryCta"></a>
+                                </div>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-levels-section site-section site-section--with-divider" id="education-levels"
+            aria-labelledby="educationLevelsTitle">
+            <div class="container">
+                <div class="education-levels-section__panel">
+                    <div class="education-levels-section__intro">
+                        <div class="education-levels-section__brand">
+                            <img alt="" class="education-levels-section__brand-logo" id="educationLevelsLogo">
+                        </div>
+
+                        <div class="education-levels-section__copy">
+                            <p class="education-levels-section__kicker" id="educationLevelsKicker"></p>
+
+                            <h2 class="education-levels-section__title" id="educationLevelsTitle"></h2>
+
+                            <p class="education-levels-section__description" id="educationLevelsDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="education-levels-section__grid" id="educationLevelsGrid">
+                        <article class="education-level-card education-level-card--third-cycle">
+                            <div class="education-level-card__media">
+                                <img src="" alt="" class="education-level-card__image" loading="lazy">
+                            </div>
+
+                            <div class="education-level-card__body">
+                                <p class="education-level-card__highlight"></p>
+
+                                <h3 class="education-level-card__title"></h3>
+
+                                <p class="education-level-card__description"></p>
+
+                                <div class="education-level-card__chips"></div>
+                            </div>
+                        </article>
+
+                        <article class="education-level-card education-level-card--bachillerato">
+                            <div class="education-level-card__media">
+                                <img src="" alt="" class="education-level-card__image" loading="lazy">
+                            </div>
+
+                            <div class="education-level-card__body">
+                                <p class="education-level-card__highlight"></p>
+
+                                <h3 class="education-level-card__title"></h3>
+
+                                <p class="education-level-card__description"></p>
+
+                                <div class="education-level-card__chips"></div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tech-careers-section site-section site-section--with-divider" id="tech-careers"
+            aria-labelledby="techCareersTitle">
+            <div class="container">
+                <div class="tech-careers-section__panel">
+                    <div class="tech-careers-section__intro">
+                        <div class="tech-careers-section__brand">
+                            <img alt="" class="tech-careers-section__brand-logo" id="techCareersLogo">
+                        </div>
+
+                        <div class="tech-careers-section__copy">
+                            <p class="tech-careers-section__kicker" id="techCareersKicker"></p>
+                            <h2 class="tech-careers-section__title" id="techCareersTitle"></h2>
+                            <p class="tech-careers-section__description" id="techCareersDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="tech-careers-section__grid" id="techCareersGrid">
+                        <article class="tech-career-card">
+                            <p class="tech-career-card__top-tag"></p>
+                            <div class="tech-career-card__media">
+                                <img src="" alt="" class="tech-career-card__image" loading="lazy">
+                            </div>
+                            <div class="tech-career-card__body">
+                                <p class="tech-career-card__area-tag"></p>
+                                <h3 class="tech-career-card__title"></h3>
+                                <p class="tech-career-card__description"></p>
+                                <ul class="tech-career-card__features">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="tech-career-card__quote"></div>
+                                <p class="tech-career-card__duration"></p>
+                                <div class="tech-career-card__actions">
+                                    <a href="" class="btn btn-action"></a>
+                                    <a href="" class="btn btn-glass"></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="tech-career-card">
+                            <p class="tech-career-card__top-tag"></p>
+                            <div class="tech-career-card__media">
+                                <img src="" alt="" class="tech-career-card__image" loading="lazy">
+                            </div>
+                            <div class="tech-career-card__body">
+                                <p class="tech-career-card__area-tag"></p>
+                                <h3 class="tech-career-card__title"></h3>
+                                <p class="tech-career-card__description"></p>
+                                <ul class="tech-career-card__features">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="tech-career-card__quote"></div>
+                                <p class="tech-career-card__duration"></p>
+                                <div class="tech-career-card__actions">
+                                    <a href="" class="btn btn-action"></a>
+                                    <a href="" class="btn btn-glass"></a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="tech-career-card">
+                            <p class="tech-career-card__top-tag"></p>
+                            <div class="tech-career-card__media">
+                                <img src="" alt="" class="tech-career-card__image" loading="lazy">
+                            </div>
+                            <div class="tech-career-card__body">
+                                <p class="tech-career-card__area-tag"></p>
+                                <h3 class="tech-career-card__title"></h3>
+                                <p class="tech-career-card__description"></p>
+                                <ul class="tech-career-card__features">
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                                <div class="tech-career-card__quote"></div>
+                                <p class="tech-career-card__duration"></p>
+                                <div class="tech-career-card__actions">
+                                    <a href="" class="btn btn-action"></a>
+                                    <a href="" class="btn btn-glass"></a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="tech-careers-section__assistant" id="techCareersAssistant" hidden>
+                        <div class="tech-careers-section__assistant-bubble" id="techCareersAssistantBubble"></div>
+                        <img src="" alt="" class="tech-careers-section__assistant-icon" id="techCareersAssistantIcon" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section site-section site-section--with-divider" id="gallery"
+            aria-labelledby="galleryTitle">
+            <div class="gallery-section__shell">
+                <div class="gallery-section__intro">
+                    <div class="gallery-section__brand">
+                        <img alt="" class="gallery-section__brand-logo" id="galleryLogo">
+                    </div>
+
+                    <div class="gallery-section__copy">
+                        <p class="gallery-section__kicker" id="galleryKicker"></p>
+
+                        <h2 class="gallery-section__title" id="galleryTitle"></h2>
+
+                        <p class="gallery-section__description" id="galleryDescription"></p>
+                    </div>
+                </div>
+
+                <div class="gallery-section__layout" id="galleryLayout">
+                    <article class="gallery-card gallery-card--featured" data-gallery-index="0">
+                        <button class="gallery-card__button" type="button" aria-label="Abrir imagen de galería">
+                            <img src="" alt="" class="gallery-card__image" loading="lazy">
+
+                            <span class="gallery-card__overlay">
+                                <span class="gallery-card__overlay-copy">
+                                    <span class="gallery-card__title"></span>
+                                    <span class="gallery-card__subtitle"></span>
+                                </span>
+
+                                <span class="gallery-card__zoom" aria-hidden="true">
+                                    <svg class="gallery-card__zoom-icon" viewBox="0 0 24 24" fill="none">
+                                        <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8">
+                                        </circle>
+                                        <path d="M20 20L16.2 16.2" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round"></path>
+                                        <path d="M11 8.4V13.6M8.4 11H13.6" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linecap="round"></path>
+                                    </svg>
+                                </span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <div class="gallery-section__stack" id="galleryStack">
+                        <article class="gallery-card" data-gallery-index="1">
+                            <button class="gallery-card__button" type="button" aria-label="Abrir imagen de galería">
+                                <img src="" alt="" class="gallery-card__image" loading="lazy">
+
+                                <span class="gallery-card__overlay">
+                                    <span class="gallery-card__overlay-copy">
+                                        <span class="gallery-card__title"></span>
+                                        <span class="gallery-card__subtitle"></span>
+                                    </span>
+
+                                    <span class="gallery-card__zoom" aria-hidden="true">
+                                        <svg class="gallery-card__zoom-icon" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8">
+                                            </circle>
+                                            <path d="M20 20L16.2 16.2" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                            <path d="M11 8.4V13.6M8.4 11H13.6" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="gallery-card" data-gallery-index="2">
+                            <button class="gallery-card__button" type="button" aria-label="Abrir imagen de galería">
+                                <img src="" alt="" class="gallery-card__image" loading="lazy">
+
+                                <span class="gallery-card__overlay">
+                                    <span class="gallery-card__overlay-copy">
+                                        <span class="gallery-card__title"></span>
+                                        <span class="gallery-card__subtitle"></span>
+                                    </span>
+
+                                    <span class="gallery-card__zoom" aria-hidden="true">
+                                        <svg class="gallery-card__zoom-icon" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8">
+                                            </circle>
+                                            <path d="M20 20L16.2 16.2" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                            <path d="M11 8.4V13.6M8.4 11H13.6" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+
+                        <article class="gallery-card" data-gallery-index="3">
+                            <button class="gallery-card__button" type="button" aria-label="Abrir imagen de galería">
+                                <img src="" alt="" class="gallery-card__image" loading="lazy">
+
+                                <span class="gallery-card__overlay">
+                                    <span class="gallery-card__overlay-copy">
+                                        <span class="gallery-card__title"></span>
+                                        <span class="gallery-card__subtitle"></span>
+                                    </span>
+
+                                    <span class="gallery-card__zoom" aria-hidden="true">
+                                        <svg class="gallery-card__zoom-icon" viewBox="0 0 24 24" fill="none">
+                                            <circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.8">
+                                            </circle>
+                                            <path d="M20 20L16.2 16.2" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                            <path d="M11 8.4V13.6M8.4 11H13.6" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                </span>
+                            </button>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true" hidden>
+            <div class="gallery-lightbox__backdrop" data-gallery-close="true"></div>
+
+            <div class="gallery-lightbox__dialog" role="dialog" aria-modal="true" aria-labelledby="galleryLightboxTitle"
+                aria-describedby="galleryLightboxCaption">
+                <button class="gallery-lightbox__close" id="galleryLightboxClose" type="button"
+                    aria-label="Cerrar imagen ampliada">
+                    <svg class="gallery-lightbox__close-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M7 7L17 17M17 7L7 17" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        </path>
+                    </svg>
+                </button>
+
+                <div class="gallery-lightbox__media">
+                    <img src="" alt="" class="gallery-lightbox__image" id="galleryLightboxImage">
+                </div>
+
+                <div class="gallery-lightbox__caption">
+                    <h3 class="gallery-lightbox__title" id="galleryLightboxTitle"></h3>
+                    <p class="gallery-lightbox__text" id="galleryLightboxCaption"></p>
+                </div>
+            </div>
+        </div>
+
+        <section class="countdown-section site-section site-section--with-divider" id="countdown"
+            aria-labelledby="countdownTitle">
+            <div class="container">
+                <div class="countdown-section__panel">
+                    <div class="countdown-section__intro">
+                        <div class="countdown-section__brand">
+                            <img alt="" class="countdown-section__brand-logo" id="countdownLogo">
+                        </div>
+
+                        <div class="countdown-section__copy">
+                            <p class="countdown-section__kicker" id="countdownKicker"></p>
+
+                            <h2 class="countdown-section__title" id="countdownTitle"></h2>
+
+                            <p class="countdown-section__description" id="countdownDescription"></p>
+
+                            <div class="countdown-section__event-line">
+                                <span class="countdown-section__event-badge" id="countdownEventBadge"></span>
+
+                                <p class="countdown-section__event-message" id="countdownEventMessage"></p>
+                            </div>
+
+                            <p class="countdown-section__event-date" id="countdownEventDate"></p>
+                        </div>
+                    </div>
+
+                    <div class="countdown-section__grid">
+                        <article class="countdown-card">
+                            <p class="countdown-card__value" id="countdownDays">000</p>
+                            <p class="countdown-card__label" id="countdownDaysLabel"></p>
+                        </article>
+
+                        <article class="countdown-card">
+                            <p class="countdown-card__value" id="countdownHours">00</p>
+                            <p class="countdown-card__label" id="countdownHoursLabel"></p>
+                        </article>
+
+                        <article class="countdown-card">
+                            <p class="countdown-card__value" id="countdownMinutes">00</p>
+                            <p class="countdown-card__label" id="countdownMinutesLabel"></p>
+                        </article>
+
+                        <article class="countdown-card">
+                            <p class="countdown-card__value" id="countdownSeconds">00</p>
+                            <p class="countdown-card__label" id="countdownSecondsLabel"></p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="notices-section site-section site-section--with-divider" id="notices"
+            aria-labelledby="noticesTitle">
+            <div class="container">
+                <div class="notices-section__panel">
+                    <div class="notices-section__intro">
+                        <div class="notices-section__brand">
+                            <img alt="" class="notices-section__brand-logo" id="noticesLogo">
+                        </div>
+
+                        <div class="notices-section__copy">
+                            <p class="notices-section__kicker" id="noticesKicker"></p>
+
+                            <h2 class="notices-section__title" id="noticesTitle"></h2>
+
+                            <p class="notices-section__description" id="noticesDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="notices-section__list" id="noticesList">
+                        <article class="notice-card">
+                            <span class="notice-card__dot" aria-hidden="true"></span>
+                            <p class="notice-card__date"></p>
+                            <p class="notice-card__text"></p>
+                        </article>
+
+                        <article class="notice-card">
+                            <span class="notice-card__dot" aria-hidden="true"></span>
+                            <p class="notice-card__date"></p>
+                            <p class="notice-card__text"></p>
+                        </article>
+
+                        <article class="notice-card">
+                            <span class="notice-card__dot" aria-hidden="true"></span>
+                            <p class="notice-card__date"></p>
+                            <p class="notice-card__text"></p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section site-section site-section--with-divider" id="events"
+            aria-labelledby="eventsTitle">
+            <div class="container">
+                <div class="events-section__panel">
+                    <div class="events-section__intro">
+                        <div class="events-section__brand">
+                            <img alt="" class="events-section__brand-logo" id="eventsLogo">
+                        </div>
+
+                        <div class="events-section__copy">
+                            <p class="events-section__kicker" id="eventsKicker"></p>
+
+                            <h2 class="events-section__title" id="eventsTitle"></h2>
+
+                            <p class="events-section__description" id="eventsDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="events-section__list" id="eventsList">
+                        <article class="event-card">
+                            <div class="event-card__date-box">
+                                <span class="event-card__day"></span>
+                                <span class="event-card__month"></span>
+                            </div>
+
+                            <div class="event-card__content">
+                                <p class="event-card__date"></p>
+                                <h3 class="event-card__title"></h3>
+                                <p class="event-card__text"></p>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-card__date-box">
+                                <span class="event-card__day"></span>
+                                <span class="event-card__month"></span>
+                            </div>
+
+                            <div class="event-card__content">
+                                <p class="event-card__date"></p>
+                                <h3 class="event-card__title"></h3>
+                                <p class="event-card__text"></p>
+                            </div>
+                        </article>
+
+                        <article class="event-card">
+                            <div class="event-card__date-box">
+                                <span class="event-card__day"></span>
+                                <span class="event-card__month"></span>
+                            </div>
+
+                            <div class="event-card__content">
+                                <p class="event-card__date"></p>
+                                <h3 class="event-card__title"></h3>
+                                <p class="event-card__text"></p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials-section site-section site-section--with-divider" id="testimonials"
+            aria-labelledby="testimonialsTitle">
+            <div class="container">
+                <div class="testimonials-section__panel">
+                    <div class="testimonials-section__intro">
+                        <div class="testimonials-section__brand">
+                            <img alt="" class="testimonials-section__brand-logo" id="testimonialsLogo">
+                        </div>
+
+                        <div class="testimonials-section__copy">
+                            <p class="testimonials-section__kicker" id="testimonialsKicker"></p>
+
+                            <h2 class="testimonials-section__title" id="testimonialsTitle"></h2>
+
+                            <p class="testimonials-section__description" id="testimonialsDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="testimonials-section__carousel" id="testimonialsCarousel"
+                        aria-label="Testimonios de egresados">
+                        <button class="testimonials-section__nav testimonials-section__nav--prev" id="testimonialsPrev"
+                            type="button" aria-label="Testimonio anterior">
+                            <svg class="testimonials-section__nav-icon" viewBox="0 0 24 24" fill="none"
+                                aria-hidden="true">
+                                <path d="M15 6L9 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+
+                        <div class="testimonials-section__viewport">
+                            <div class="testimonials-section__track" id="testimonialsTrack">
+                                <article class="testimonial-card is-active">
+                                    <span class="testimonial-card__quote-mark" aria-hidden="true">“</span>
+
+                                    <p class="testimonial-card__text"></p>
+
+                                    <div class="testimonial-card__author">
+                                        <div class="testimonial-card__avatar">
+                                            <span class="testimonial-card__initials"></span>
+                                            <img src="" alt="" class="testimonial-card__avatar-image" hidden>
+                                        </div>
+
+                                        <div class="testimonial-card__author-copy">
+                                            <p class="testimonial-card__name"></p>
+                                            <p class="testimonial-card__meta"></p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="testimonial-card">
+                                    <span class="testimonial-card__quote-mark" aria-hidden="true">“</span>
+
+                                    <p class="testimonial-card__text"></p>
+
+                                    <div class="testimonial-card__author">
+                                        <div class="testimonial-card__avatar">
+                                            <span class="testimonial-card__initials"></span>
+                                            <img src="" alt="" class="testimonial-card__avatar-image" hidden>
+                                        </div>
+
+                                        <div class="testimonial-card__author-copy">
+                                            <p class="testimonial-card__name"></p>
+                                            <p class="testimonial-card__meta"></p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="testimonial-card">
+                                    <span class="testimonial-card__quote-mark" aria-hidden="true">“</span>
+
+                                    <p class="testimonial-card__text"></p>
+
+                                    <div class="testimonial-card__author">
+                                        <div class="testimonial-card__avatar">
+                                            <span class="testimonial-card__initials"></span>
+                                            <img src="" alt="" class="testimonial-card__avatar-image" hidden>
+                                        </div>
+
+                                        <div class="testimonial-card__author-copy">
+                                            <p class="testimonial-card__name"></p>
+                                            <p class="testimonial-card__meta"></p>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <article class="testimonial-card">
+                                    <span class="testimonial-card__quote-mark" aria-hidden="true">“</span>
+
+                                    <p class="testimonial-card__text"></p>
+
+                                    <div class="testimonial-card__author">
+                                        <div class="testimonial-card__avatar">
+                                            <span class="testimonial-card__initials"></span>
+                                            <img src="" alt="" class="testimonial-card__avatar-image" hidden>
+                                        </div>
+
+                                        <div class="testimonial-card__author-copy">
+                                            <p class="testimonial-card__name"></p>
+                                            <p class="testimonial-card__meta"></p>
+                                        </div>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+
+                        <button class="testimonials-section__nav testimonials-section__nav--next" id="testimonialsNext"
+                            type="button" aria-label="Siguiente testimonio">
+                            <svg class="testimonials-section__nav-icon" viewBox="0 0 24 24" fill="none"
+                                aria-hidden="true">
+                                <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round"></path>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="testimonials-section__footer">
+                        <div class="testimonials-section__dots" id="testimonialsDots"
+                            aria-label="Indicadores de testimonios"></div>
+                        <p class="testimonials-section__counter" id="testimonialsCounter"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news-section site-section site-section--with-divider" id="news"
+            aria-labelledby="newsTitle">
+            <div class="news-section__shell">
+                <div class="news-section__intro">
+                    <div class="news-section__brand">
+                        <img alt="" class="news-section__brand-logo" id="newsLogo">
+                    </div>
+
+                    <div class="news-section__copy">
+                        <p class="news-section__kicker" id="newsKicker"></p>
+
+                        <h2 class="news-section__title" id="newsTitle"></h2>
+
+                        <p class="news-section__description" id="newsDescription"></p>
+                    </div>
+
+                    <div class="news-section__actions">
+                        <a href="" class="btn btn-action" id="newsCta"></a>
+                    </div>
+                </div>
+
+                <div class="news-section__layout">
+                    <article class="news-card news-card--featured" id="newsFeaturedCard">
+                        <div class="news-card__media">
+                            <img src="" alt="" class="news-card__image" id="newsFeaturedImage" loading="lazy">
+                        </div>
+
+                        <div class="news-card__content">
+                            <div class="news-card__meta-row">
+                                <div class="news-card__badges">
+                                    <span class="news-card__badge news-card__badge--new"
+                                        id="newsFeaturedNewBadge"></span>
+
+                                    <span class="news-card__badge news-card__badge--category"
+                                        id="newsFeaturedCategory"></span>
+                                </div>
+
+                                <div class="news-card__date-group">
+                                    <span class="news-card__date-icon-slot">
+                                        <img src="" alt="" class="news-card__date-icon" id="newsFeaturedDateIcon">
+                                    </span>
+
+                                    <span class="news-card__date" id="newsFeaturedDate"></span>
+                                </div>
+                            </div>
+
+                            <h3 class="news-card__title" id="newsFeaturedTitle"></h3>
+
+                            <p class="news-card__text" id="newsFeaturedText"></p>
+
+                            <a href="" class="news-card__link" id="newsFeaturedLink">
+                                <span id="newsFeaturedLinkLabel"></span>
+
+                                <span class="news-card__link-icon-slot">
+                                    <img src="" alt="" class="news-card__link-icon" id="newsFeaturedLinkIcon">
+                                </span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <div class="news-section__stack" id="newsStack">
+                        <article class="news-card">
+                            <div class="news-card__media">
+                                <img src="" alt="" class="news-card__image" loading="lazy">
+                            </div>
+
+                            <div class="news-card__content">
+                                <div class="news-card__meta-row">
+                                    <div class="news-card__badges">
+                                        <span class="news-card__badge news-card__badge--new"></span>
+                                        <span class="news-card__badge news-card__badge--category"></span>
+                                    </div>
+
+                                    <div class="news-card__date-group">
+                                        <span class="news-card__date-icon-slot">
+                                            <img src="" alt="" class="news-card__date-icon">
+                                        </span>
+
+                                        <span class="news-card__date"></span>
+                                    </div>
+                                </div>
+
+                                <h3 class="news-card__title"></h3>
+
+                                <p class="news-card__text"></p>
+
+                                <a href="" class="news-card__link">
+                                    <span></span>
+
+                                    <span class="news-card__link-icon-slot">
+                                        <img src="" alt="" class="news-card__link-icon">
+                                    </span>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-card__media">
+                                <img src="" alt="" class="news-card__image" loading="lazy">
+                            </div>
+
+                            <div class="news-card__content">
+                                <div class="news-card__meta-row">
+                                    <div class="news-card__badges">
+                                        <span class="news-card__badge news-card__badge--new"></span>
+                                        <span class="news-card__badge news-card__badge--category"></span>
+                                    </div>
+
+                                    <div class="news-card__date-group">
+                                        <span class="news-card__date-icon-slot">
+                                            <img src="" alt="" class="news-card__date-icon">
+                                        </span>
+
+                                        <span class="news-card__date"></span>
+                                    </div>
+                                </div>
+
+                                <h3 class="news-card__title"></h3>
+
+                                <p class="news-card__text"></p>
+
+                                <a href="" class="news-card__link">
+                                    <span></span>
+
+                                    <span class="news-card__link-icon-slot">
+                                        <img src="" alt="" class="news-card__link-icon">
+                                    </span>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-card__media">
+                                <img src="" alt="" class="news-card__image" loading="lazy">
+                            </div>
+
+                            <div class="news-card__content">
+                                <div class="news-card__meta-row">
+                                    <div class="news-card__badges">
+                                        <span class="news-card__badge news-card__badge--new"></span>
+                                        <span class="news-card__badge news-card__badge--category"></span>
+                                    </div>
+
+                                    <div class="news-card__date-group">
+                                        <span class="news-card__date-icon-slot">
+                                            <img src="" alt="" class="news-card__date-icon">
+                                        </span>
+
+                                        <span class="news-card__date"></span>
+                                    </div>
+                                </div>
+
+                                <h3 class="news-card__title"></h3>
+
+                                <p class="news-card__text"></p>
+
+                                <a href="" class="news-card__link">
+                                    <span></span>
+
+                                    <span class="news-card__link-icon-slot">
+                                        <img src="" alt="" class="news-card__link-icon">
+                                    </span>
+                                </a>
+                            </div>
+                        </article>
+
+                        <article class="news-card">
+                            <div class="news-card__media">
+                                <img src="" alt="" class="news-card__image" loading="lazy">
+                            </div>
+
+                            <div class="news-card__content">
+                                <div class="news-card__meta-row">
+                                    <div class="news-card__badges">
+                                        <span class="news-card__badge news-card__badge--new"></span>
+                                        <span class="news-card__badge news-card__badge--category"></span>
+                                    </div>
+
+                                    <div class="news-card__date-group">
+                                        <span class="news-card__date-icon-slot">
+                                            <img src="" alt="" class="news-card__date-icon">
+                                        </span>
+
+                                        <span class="news-card__date"></span>
+                                    </div>
+                                </div>
+
+                                <h3 class="news-card__title"></h3>
+
+                                <p class="news-card__text"></p>
+
+                                <a href="" class="news-card__link">
+                                    <span></span>
+
+                                    <span class="news-card__link-icon-slot">
+                                        <img src="" alt="" class="news-card__link-icon">
+                                    </span>
+                                </a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section site-section site-section--with-divider" id="contact"
+            aria-labelledby="contactTitle">
+            <div class="container">
+                <div class="contact-section__panel">
+                    <div class="contact-section__intro">
+                        <div class="contact-section__brand">
+                            <img src="" alt="" class="contact-section__brand-logo" id="contactLogo">
+                        </div>
+
+                        <div class="contact-section__copy">
+                            <p class="contact-section__kicker" id="contactKicker"> </p>
+
+                            <h2 class="contact-section__title" id="contactTitle"></h2>
+
+                            <p class="contact-section__description" id="contactDescription"></p>
+                        </div>
+                    </div>
+
+                    <div class="contact-section__grid">
+                        <article class="contact-card contact-card--info" id="contactInfoCard">
+                            <div class="contact-card__header">
+                                <div class="contact-card__title-wrap">
+                                    <span class="contact-card__title-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                            <path fill="currentColor"
+                                                d="M172 164a12 12 0 0 1-12 12H96a12 12 0 0 1 0-24h64a12 12 0 0 1 12 12m-12-52H96a12 12 0 0 0 0 24h64a12 12 0 0 0 0-24m60-64v168a20 20 0 0 1-20 20H56a20 20 0 0 1-20-20V48a20 20 0 0 1 20-20h34.53a51.88 51.88 0 0 1 74.94 0H200a20 20 0 0 1 20 20M100.29 60h55.42a28 28 0 0 0-55.42 0M196 52h-17.41A52 52 0 0 1 180 64v8a12 12 0 0 1-12 12H88a12 12 0 0 1-12-12v-8a52 52 0 0 1 1.41-12H60v160h136Z" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <h3 class="contact-card__title" id="contactInfoTitle"></h3>
+
+                                        <p class="contact-card__text" id="contactInfoDescription"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-status contact-status--open" id="contactStatus" role="status"
+                                aria-live="polite">
+                                <span class="contact-status__dot" aria-hidden="true"></span>
+                                <span class="contact-status__text" id="contactStatusText"></span>
+                            </div>
+
+                            <div class="contact-info-list" id="contactInfoList">
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item__head">
+                                        <span class="contact-info-item__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M128 60a44 44 0 1 0 44 44a44.05 44.05 0 0 0-44-44m0 64a20 20 0 1 1 20-20a20 20 0 0 1-20 20m0-112a92.1 92.1 0 0 0-92 92c0 77.36 81.64 135.4 85.12 137.83a12 12 0 0 0 13.76 0a259 259 0 0 0 42.18-39C205.15 170.57 220 136.37 220 104a92.1 92.1 0 0 0-92-92m31.3 174.71a249.4 249.4 0 0 1-31.3 30.18a249.4 249.4 0 0 1-31.3-30.18C80 167.37 60 137.31 60 104a68 68 0 0 1 136 0c0 33.31-20 63.37-36.7 82.71" />
+                                            </svg>
+                                        </span>
+                                        <span class="contact-info-item__label" id="contactAddressLabel"></span>
+                                    </div>
+
+                                    <p class="contact-info-item__value" id="contactAddress"></p>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item__head">
+                                        <span class="contact-info-item__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M128 20a108 108 0 1 0 108 108A108.12 108.12 0 0 0 128 20m0 192a84 84 0 1 1 84-84a84.09 84.09 0 0 1-84 84m68-84a12 12 0 0 1-12 12h-56a12 12 0 0 1-12-12V72a12 12 0 0 1 24 0v44h44a12 12 0 0 1 12 12" />
+                                            </svg>
+                                        </span>
+                                        <span class="contact-info-item__label" id="contactScheduleLabel"></span>
+                                    </div>
+
+                                    <p class="contact-info-item__value" id="contactSchedule"></p>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item__head">
+                                        <span class="contact-info-item__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="m224 154.8l-47.09-21.11l-.18-.08a19.94 19.94 0 0 0-19 1.75a13 13 0 0 0-1.12.84l-22.31 19c-13-7.05-26.43-20.37-33.49-33.21l19.06-22.66a12 12 0 0 0 .85-1.15a20 20 0 0 0 1.66-18.83a1.4 1.4 0 0 1-.08-.18L101.2 32a20.06 20.06 0 0 0-20.78-11.85A60.27 60.27 0 0 0 28 80c0 81.61 66.39 148 148 148a60.27 60.27 0 0 0 59.85-52.42A20.06 20.06 0 0 0 224 154.8M176 204A124.15 124.15 0 0 1 52 80a36.29 36.29 0 0 1 28.48-35.54l18.82 42l-19.16 22.82a12 12 0 0 0-.86 1.16A20 20 0 0 0 78 130.08c9.42 19.28 28.83 38.56 48.31 48a20 20 0 0 0 19.69-1.45a12 12 0 0 0 1.11-.85l22.43-19.07l42 18.81A36.29 36.29 0 0 1 176 204" />
+                                            </svg>
+                                        </span>
+                                        <span class="contact-info-item__label" id="contactPhonesLabel"></span>
+                                    </div>
+
+                                    <p class="contact-info-item__value" id="contactPhones"></p>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item__head">
+                                        <span class="contact-info-item__icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M128 20a108 108 0 0 0 0 216c22.27 0 45.69-6.73 62.64-18a12 12 0 1 0-13.29-20c-13 8.63-31.89 14-49.35 14a84 84 0 1 1 84-84c0 9.29-1.67 17.08-4.69 21.95c-2.64 4.24-6 6.05-11.31 6.05s-8.67-1.81-11.31-6.05c-3-4.87-4.69-12.66-4.69-21.95V88a12 12 0 0 0-23.49-3.46a52 52 0 1 0 8.86 79.57C172.3 174.3 182.81 180 196 180c24.67 0 40-19.92 40-52A108.12 108.12 0 0 0 128 20m0 136a28 28 0 1 1 28-28a28 28 0 0 1-28 28" />
+                                            </svg>
+                                        </span>
+                                        <span class="contact-info-item__label" id="contactEmailLabel"></span>
+                                    </div>
+
+                                    <p class="contact-info-item__value">
+                                        <a href="mailto:info@tecmorazan.edu.hn" id="contactEmail"></a>
+                                    </p>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-info-item__head">
+                                        <span class="contact-info-item__label" id="contactFollowLabel"></span>
+                                    </div>
+
+                                    <div class="contact-social" id="contactSocialLinks">
+                                        <a href="#" class="contact-social__link" id="contactFacebookLink"
+                                            aria-label="Facebook" target="_blank" rel="noopener">
+                                            <img src="" alt="" class="contact-social__icon">
+                                        </a>
+
+                                        <a href="#" class="contact-social__link" id="contactInstagramLink"
+                                            aria-label="Instagram" target="_blank" rel="noopener">
+                                            <img src="" alt="" class="contact-social__icon">
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="contact-info-item">
+                                    <div class="contact-share">
+                                        <span class="contact-share__label" id="contactShareLabel"></span>
+
+                                        <div class="contact-share__actions">
+                                            <a href="#" class="contact-share__button" id="shareFacebook"
+                                                aria-label="Compartir en Facebook" target="_blank" rel="noopener">
+                                                <svg viewBox="0 0 256 256" class="contact-share__icon">
+                                                    <path fill="currentColor"
+                                                        d="M128 20a108 108 0 1 0 108 108A108.12 108.12 0 0 0 128 20m12 191.13V156h20a12 12 0 0 0 0-24h-20v-20a12 12 0 0 1 12-12h16a12 12 0 0 0 0-24h-16a36 36 0 0 0-36 36v20H96a12 12 0 0 0 0 24h20v55.13a84 84 0 1 1 24 0" />
+                                                </svg>
+                                            </a>
+
+                                            <a href="#" class="contact-share__button" id="shareInstagram"
+                                                aria-label="Compartir en Instagram" target="_blank" rel="noopener">
+                                                <svg viewBox="0 0 256 256" class="contact-share__icon">
+                                                    <path fill="currentColor"
+                                                        d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48m0 72a24 24 0 1 1 24-24a24 24 0 0 1-24 24m48-132H80a60.07 60.07 0 0 0-60 60v96a60.07 60.07 0 0 0 60 60h96a60.07 60.07 0 0 0 60-60V80a60.07 60.07 0 0 0-60-60m36 156a36 36 0 0 1-36 36H80a36 36 0 0 1-36-36V80a36 36 0 0 1 36-36h96a36 36 0 0 1 36 36ZM196 76a16 16 0 1 1-16-16a16 16 0 0 1 16 16" />
+                                                </svg>
+                                            </a>
+
+                                            <a href="#" class="contact-share__button" id="shareX"
+                                                aria-label="Compartir en X" target="_blank" rel="noopener">
+                                                <svg viewBox="0 0 256 256" class="contact-share__icon">
+                                                    <path fill="currentColor"
+                                                        d="m218.12 209.56l-61-95.8l59.72-65.69a12 12 0 0 0-17.76-16.14l-55.27 60.84l-37.69-59.21A12 12 0 0 0 96 28H48a12 12 0 0 0-10.12 18.44l61 95.8l-59.76 65.69a12 12 0 1 0 17.76 16.14l55.31-60.84l37.69 59.21A12 12 0 0 0 160 228h48a12 12 0 0 0 10.12-18.44M166.59 204L69.86 52h19.55l96.73 152Z" />
+                                                </svg>
+                                            </a>
+
+                                            <a href="#" class="contact-share__button" id="shareWhatsapp"
+                                                aria-label="Compartir en WhatsApp" target="_blank" rel="noopener">
+                                                <svg viewBox="0 0 256 256" class="contact-share__icon">
+                                                    <path fill="currentColor"
+                                                        d="M187.3 159.06A36.09 36.09 0 0 1 152 188a84.09 84.09 0 0 1-84-84a36.09 36.09 0 0 1 28.94-35.3A12 12 0 0 1 110 75.1l11.48 23a12 12 0 0 1-.75 12l-8.52 12.78a44.56 44.56 0 0 0 20.91 20.91l12.78-8.52a12 12 0 0 1 12-.75l23 11.48a12 12 0 0 1 6.4 13.06M236 128a108 108 0 0 1-157.23 96.15L46.34 235A20 20 0 0 1 21 209.66l10.81-32.43A108 108 0 1 1 236 128m-24 0a84 84 0 1 0-156.73 42.06a12 12 0 0 1 1 9.81l-9.93 29.79l29.79-9.93a12.1 12.1 0 0 1 3.8-.62a12 12 0 0 1 6 1.62A84 84 0 0 0 212 128" />
+                                                </svg>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="contact-card contact-card--form" id="contactFormCard">
+                            <div class="contact-card__header">
+                                <div class="contact-card__title-wrap">
+                                    <span class="contact-card__title-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                            <path fill="currentColor"
+                                                d="M200 28h-34.53a51.88 51.88 0 0 0-74.94 0H56a20 20 0 0 0-20 20v168a20 20 0 0 0 20 20h144a20 20 0 0 0 20-20V48a20 20 0 0 0-20-20m-44.29 32h-55.42a28 28 0 0 1 55.42 0M196 212H60V52h17.41A52 52 0 0 0 76 64v8a12 12 0 0 0 12 12h80a12 12 0 0 0 12-12v-8a52 52 0 0 0-1.41-12H196Z" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <h3 class="contact-card__title" id="contactFormTitle"></h3>
+
+                                        <p class="contact-card__text" id="contactFormDescription"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <form class="contact-form" id="contactForm" novalidate>
+                                <div class="contact-form__field" id="contactNameField">
+                                    <label for="contactName" class="contact-form__label" id="contactNameLabel">
+                                        <span class="contact-form__label-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M234.38 210a123.36 123.36 0 0 0-60.78-53.23a76 76 0 1 0-91.2 0A123.36 123.36 0 0 0 21.62 210a12 12 0 1 0 20.77 12c18.12-31.32 50.12-50 85.61-50s67.49 18.69 85.61 50a12 12 0 0 0 20.77-12M76 96a52 52 0 1 1 52 52a52.06 52.06 0 0 1-52-52" />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <input type="text" id="contactName" name="nombre" class="contact-form__input"
+                                        placeholder="" required>
+                                    <span class="contact-form__error" id="contactNameError"></span>
+                                </div>
+
+                                <div class="contact-form__field" id="contactPhoneField">
+                                    <label for="contactPhone" class="contact-form__label" id="contactPhoneLabel">
+                                        <span class="contact-form__label-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M176 12H80a28 28 0 0 0-28 28v176a28 28 0 0 0 28 28h96a28 28 0 0 0 28-28V40a28 28 0 0 0-28-28M76 76h104v104H76Zm4-40h96a4 4 0 0 1 4 4v12H76V40a4 4 0 0 1 4-4m96 184H80a4 4 0 0 1-4-4v-12h104v12a4 4 0 0 1-4 4" />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <input type="tel" id="contactPhone" name="celular" class="contact-form__input"
+                                        placeholder="" required>
+                                    <span class="contact-form__error" id="contactPhoneError"></span>
+                                </div>
+
+                                <div class="contact-form__field" id="contactEmailInputField">
+                                    <label for="contactEmailInput" class="contact-form__label"
+                                        id="contactEmailInputLabel">
+                                        <span class="contact-form__label-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M230.14 25.86a20 20 0 0 0-19.57-5.11l-.22.07L18.44 79a20 20 0 0 0-3.06 37.25L99 157l40.71 83.65a19.81 19.81 0 0 0 18 11.38c.57 0 1.15 0 1.73-.07a19.82 19.82 0 0 0 17.56-14.4l58.18-191.91a1.4 1.4 0 0 0 .07-.22a20 20 0 0 0-5.11-19.57m-73.23 195.21l-34.37-70.64l46-45.95a12 12 0 0 0-17-17l-46 46l-70.61-34.39L210 46Z" />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <input type="email" id="contactEmailInput" name="correo" class="contact-form__input"
+                                        placeholder="" required>
+                                    <span class="contact-form__error" id="contactEmailInputError"></span>
+                                </div>
+
+                                <div class="contact-form__field contact-form__field--textarea" id="contactMessageField">
+                                    <label for="contactMessage" class="contact-form__label" id="contactMessageLabel">
+                                        <span class="contact-form__label-icon" aria-hidden="true">
+                                            <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                                <path fill="currentColor"
+                                                    d="M84 100a12 12 0 0 1 12-12h64a12 12 0 0 1 0 24H96a12 12 0 0 1-12-12m12 52h64a12 12 0 0 0 0-24H96a12 12 0 0 0 0 24m140-96v128a20 20 0 0 1-20 20h-58.11l-12.52 21.92a20 20 0 0 1-34.74 0L98.11 204H40a20 20 0 0 1-20-20V56a20 20 0 0 1 20-20h176a20 20 0 0 1 20 20m-24 4H44v120h61.07a12 12 0 0 1 10.42 6.05L128 207.94l12.51-21.89a12 12 0 0 1 10.42-6.05H212Z" />
+                                            </svg>
+                                        </span>
+                                    </label>
+                                    <textarea id="contactMessage" name="mensaje" class="contact-form__textarea"
+                                        placeholder="" required></textarea>
+                                    <span class="contact-form__error" id="contactMessageError"></span>
+                                </div>
+
+                                <button type="submit" class="btn btn-action contact-form__submit"
+                                    id="contactSubmitButton">
+                                </button>
+                            </form>
+                        </article>
+
+                        <article class="contact-card contact-card--map" id="contactMapCard">
+                            <div class="contact-card__header">
+                                <div class="contact-card__title-wrap">
+                                    <span class="contact-card__title-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 256 256" class="contact-inline-icon">
+                                            <path fill="currentColor"
+                                                d="M231.38 46.54a12 12 0 0 0-10.29-2.18L161.4 59.28l-60-30a12 12 0 0 0-8.28-.91l-64 16A12 12 0 0 0 20 56v144a12 12 0 0 0 14.91 11.64l59.69-14.92l60 30a12 12 0 0 0 8.28.91l64-16A12 12 0 0 0 236 200V56a12 12 0 0 0-4.62-9.46M108 59.42l40 20v117.16l-40-20Zm-64 6l40-10v119.21l-40 10Zm168 125.21l-40 10V81.37l40-10Z" />
+                                        </svg>
+                                    </span>
+
+                                    <div>
+                                        <h3 class="contact-card__title" id="contactMapTitle"></h3>
+
+                                        <p class="contact-card__text" id="contactMapDescription"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-map">
+                                <iframe id="contactMapFrame" class="contact-map__frame" src="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade" allowfullscreen
+                                    title="Mapa de ubicación del Instituto Técnico Morazán"></iframe>
+
+                                <div class="contact-map__actions">
+                                    <a href="#" class="btn btn-action" id="contactMapButton" target="_blank"
+                                        rel="noopener">
+                                    </a>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <a href="https://wa.me/50400000000" class="floating-whatsapp" aria-label="Escribir por WhatsApp" target="_blank"
+        rel="noopener noreferrer">
+        <svg class="floating-whatsapp__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <path fill="currentColor"
+                d="M16.01 4C9.39 4 4 9.22 4 15.64c0 2.25.67 4.43 1.95 6.31L4.7 28l6.28-1.2a12.2 12.2 0 0 0 5.03 1.08C22.62 27.88 28 22.66 28 16.24C28 9.82 22.62 4 16.01 4Zm0 21.82c-1.63 0-3.22-.43-4.61-1.23l-.33-.19-3.73.71.75-3.56-.22-.36a9.61 9.61 0 0 1-1.5-5.05c0-5.3 4.42-9.6 9.84-9.6 5.42 0 9.84 4.3 9.84 9.6 0 5.3-4.42 9.68-9.84 9.68Zm5.39-7.23c-.29-.14-1.72-.83-1.99-.92-.27-.1-.46-.14-.66.14-.19.28-.76.91-.93 1.1-.17.18-.34.21-.63.07-.29-.14-1.21-.44-2.31-1.4-.85-.74-1.43-1.66-1.6-1.94-.16-.28-.02-.43.13-.57.13-.13.29-.33.43-.49.14-.17.19-.28.29-.46.1-.18.05-.35-.03-.49-.07-.14-.66-1.56-.9-2.13-.24-.57-.49-.49-.66-.5h-.56c-.19 0-.49.07-.74.35-.26.28-1 1-1 2.44s1.03 2.84 1.17 3.03c.15.18 2.03 3.2 5.02 4.36.71.3 1.27.47 1.7.6.71.22 1.35.19 1.86.11.57-.08 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.11-.27-.18-.56-.32Z" />
+        </svg>
+    </a>
+
+    <button class="floating-scroll-top" id="floatingScrollTop" type="button" aria-label="Volver al inicio"
+        title="Volver al inicio" hidden>
+        <svg class="floating-scroll-top__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 18V6M12 6L7 11M12 6L17 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" />
+        </svg>
+    </button>
+
+    <div class="site-toast-stack" id="siteToastStack" aria-live="polite" aria-atomic="true">
+        <div class="site-toast site-toast--success" id="siteToast" role="status" hidden>
+            <span class="site-toast__icon-slot" aria-hidden="true">
+                <img src="img/icons/ui/check.svg" alt="" class="site-toast__icon site-toast__icon--success"
+                    id="siteToastSuccessIcon">
+
+                <img src="img/icons/ui/error.svg" alt="" class="site-toast__icon site-toast__icon--error"
+                    id="siteToastErrorIcon" hidden>
+            </span>
+
+            <div class="site-toast__content">
+                <p class="site-toast__title" id="siteToastTitle"></p>
+                <p class="site-toast__message" id="siteToastText"></p>
+            </div>
+
+            <button class="site-toast__close" id="siteToastClose" type="button" aria-label="Cerrar notificación">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="site-modal" id="siteModal" aria-hidden="true" hidden>
+        <div class="site-modal__backdrop" data-modal-close="true"></div>
+
+        <div class="site-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="siteModalTitle"
+            aria-describedby="siteModalDescription">
+
+            <button class="site-modal__close" id="siteModalClose" type="button"
+                aria-label="Cerrar ventana modal"></button>
+
+            <div class="site-modal__media" id="siteModalMedia">
+                <img src="" alt="" class="site-modal__image" id="siteModalImage">
+            </div>
+
+            <div class="site-modal__content">
+                <p class="site-modal__eyebrow" id="siteModalEyebrow" hidden></p>
+
+                <h2 class="site-modal__title" id="siteModalTitle"></h2>
+
+                <p class="site-modal__description" id="siteModalDescription"></p>
+
+                <div class="site-modal__actions">
+                    <a href="" class="btn btn-action site-modal__button site-modal__button--primary"
+                        id="siteModalPrimaryButton"></a>
+
+                    <a href="" class="btn btn-glass site-modal__button site-modal__button--secondary"
+                        id="siteModalSecondaryButton"></a>
+                </div>
+
+                <button class="site-modal__dismiss" id="siteModalDismiss" type="button"></button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="site-footer" id="footer">
+        <div class="site-footer__shape-divider" aria-hidden="true">
+            <svg viewBox="0 0 1000 100" preserveAspectRatio="none" class="site-footer__shape-svg">
+                <path
+                    d="M0 0v4c136 143.8 183.8-73.2 297 26.6 72.2 63.7 97 99 184.7 33.2a30.5 30.5 0 0 1 36.6 0c87.6 65.8 112.5 30.5 184.7-33.2C816.2-69.2 864 147.7 1000 4V0H0Z">
+                </path>
+            </svg>
+        </div>
+
+        <div class="site-footer__body">
+            <div class="site-footer__container">
+                <div class="site-footer__grid">
+                    <section class="site-footer__brand" aria-labelledby="footerBrandTitle">
+                        <div class="site-footer__brand-logo-wrap">
+                            <img src="" alt="" class="site-footer__brand-logo" id="footerLogo">
+                        </div>
+
+                        <div class="site-footer__brand-copy">
+                            <h2 class="site-footer__brand-title" id="footerBrandTitle"></h2>
+
+                            <p class="site-footer__brand-motto" id="footerMotto"></p>
+                        </div>
+                    </section>
+
+                    <nav class="site-footer__contact" aria-labelledby="footerContactTitle">
+                        <h3 class="site-footer__title" id="footerContactTitle"></h3>
+
+                        <ul class="site-footer__list">
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <path d="M12 21s-6-5.25-6-11a6 6 0 1 1 12 0c0 5.75-6 11-6 11Z" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                        <circle cx="12" cy="10" r="2.35" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" />
+                                    </svg>
+                                </span>
+
+                                <span class="site-footer__item-text" id="footerAddress"></span>
+                            </li>
+
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <path
+                                            d="M6.75 4.75h2.15c.35 0 .68.2.83.52l1.18 2.62a1 1 0 0 1-.18 1.08l-1.2 1.38a12.7 12.7 0 0 0 4.12 4.12l1.38-1.2a1 1 0 0 1 1.08-.18l2.62 1.18c.32.15.52.48.52.83v2.15a1.75 1.75 0 0 1-1.92 1.74C10.1 19.42 4.58 13.9 4.01 6.67A1.75 1.75 0 0 1 5.75 4.75Z"
+                                            fill="none" stroke="currentColor" stroke-width="1.8"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+
+                                <span class="site-footer__item-text" id="footerPhones"></span>
+                            </li>
+
+                            <li class="site-footer__item">
+                                <span class="site-footer__item-icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                        <rect x="3.75" y="5.75" width="16.5" height="12.5" rx="2.25" fill="none"
+                                            stroke="currentColor" stroke-width="1.8" />
+                                        <path d="M4.75 7.25 12 12.35l7.25-5.1" fill="none" stroke="currentColor"
+                                            stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+
+                                <a href="" class="site-footer__item-link" id="footerEmail">
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="site-footer__links" aria-labelledby="footerLinksTitle">
+                        <h3 class="site-footer__title" id="footerLinksTitle"></h3>
+
+                        <ul class="site-footer__menu" id="footerMenu">
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <path d="M4 10.5 12 4l8 6.5V20h-5.5v-5h-5v5H4v-9.5Z" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <circle cx="12" cy="8" r="3.1" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" />
+                                            <path d="M5.8 18.4c1.1-2.9 3.8-4.4 6.2-4.4s5.1 1.5 6.2 4.4" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <path d="M4 7.5 12 4l8 3.5L12 11 4 7.5Z" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" stroke-linejoin="round" />
+                                            <path d="M6.5 10.5V15c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3v-4.5" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <rect x="4" y="5" width="16" height="14" rx="2.2" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" />
+                                            <circle cx="9" cy="10" r="1.6" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" />
+                                            <path d="m20 15-4.5-4.5L8 18" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <path
+                                                d="M12 5.5a5.5 5.5 0 0 1 5.5 5.5v2.5l1.5 2v1H5v-1l1.5-2V11A5.5 5.5 0 0 1 12 5.5Z"
+                                                fill="none" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 18a2 2 0 0 0 4 0" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <path
+                                                d="M6 6h10.5A1.5 1.5 0 0 1 18 7.5v10a1.5 1.5 0 0 1-1.5 1.5H8a2 2 0 0 1-2-2V6Z"
+                                                fill="none" stroke="currentColor" stroke-width="1.8"
+                                                stroke-linejoin="round" />
+                                            <path d="M8 9h7M8 12h7M8 15h5" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" stroke-linecap="round" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+
+                            <li class="site-footer__menu-item">
+                                <a href="" class="site-footer__menu-link">
+                                    <span class="site-footer__menu-icon" aria-hidden="true">
+                                        <svg viewBox="0 0 24 24" class="site-footer__inline-icon">
+                                            <path d="M4.5 7.2 12 12l7.5-4.8" fill="none" stroke="currentColor"
+                                                stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                                            <rect x="3.5" y="6" width="17" height="12" rx="2.4" fill="none"
+                                                stroke="currentColor" stroke-width="1.8" />
+                                        </svg>
+                                    </span>
+                                    <span></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <section class="site-footer__social" aria-labelledby="footerSocialTitle">
+                        <h3 class="site-footer__title" id="footerSocialTitle"></h3>
+
+                        <div class="site-footer__social-links">
+                            <a href="" class="site-footer__social-button" id="footerFacebook" target="_blank"
+                                rel="noopener">
+                                <img src="" alt="" class="site-footer__social-icon">
+                                <span></span>
+                            </a>
+
+                            <a href="" class="site-footer__social-button" id="footerInstagram" target="_blank"
+                                rel="noopener">
+                                <img src="" alt="" class="site-footer__social-icon">
+                                <span></span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section class="site-footer__morazan" aria-label="Francisco Morazán">
+                        <img src="" alt="" class="site-footer__morazan-image" id="footerMorazanImage">
+                    </section>
+                </div>
+
+                <div class="site-footer__bottom">
+                    <p class="site-footer__copyright" id="footerCopyright"></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
